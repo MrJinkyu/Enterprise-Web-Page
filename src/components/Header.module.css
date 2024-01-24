@@ -1,0 +1,96 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: var(--color-black);
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 1000;
+}
+
+.nav {
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menuItem {
+  margin: 0 25px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all 150ms ease-out;
+}
+
+.menuItem:hover,
+.userIcon:hover {
+  color: var(--color-accent);
+}
+
+.user {
+  position: relative;
+  margin-left: 100px;
+}
+
+.userIcon {
+  color: var(--color-white);
+  font-size: 28px;
+  transition: all 150ms ease-out;
+  cursor: pointer;
+}
+
+.userMenu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 110px;
+  height: 0;
+  overflow: hidden;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 250ms ease-out;
+  opacity: 0;
+}
+.userMenu.show {
+  height: auto;
+  padding: 10px;
+  border: 1px solid lightgray;
+  opacity: 1;
+}
+.userMenuItem {
+  color: var(--color-black);
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 150ms ease-out;
+}
+
+.userMenuItem:hover {
+  background-color: whitesmoke;
+}
