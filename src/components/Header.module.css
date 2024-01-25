@@ -5,16 +5,17 @@
   width: 100%;
   height: 80px;
   background-color: var(--color-black);
+  z-index: 100;
 }
 
 .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 100%;
   max-width: 1536px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title {
@@ -61,24 +62,25 @@
   top: 40px;
   right: 0;
   width: 110px;
-  height: 0;
-  overflow: hidden;
+  height: auto;
   background-color: var(--color-white);
   border-radius: 10px;
-  border: 1px solid transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 250ms ease-out;
-  opacity: 0;
-}
-.userMenu.show {
-  height: auto;
+  transition: all 150ms ease-out;
   padding: 10px;
   border: 1px solid lightgray;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.userMenu.show {
+  pointer-events: auto;
   opacity: 1;
 }
+
 .userMenuItem {
   color: var(--color-black);
   border-radius: 5px;
