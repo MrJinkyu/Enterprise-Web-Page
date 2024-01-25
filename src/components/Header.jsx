@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { AiOutlineShopping } from "react-icons/ai";
-import { login, logout, onUserStateChange } from "../apis/firebase";
+import { useAuthContext } from "../context/AuthContext";
 
 export default function Header() {
   const [userMenuVisible, setUserMenuVisible] = useState(false);
-  const [user, setUser] = useState();
-  useEffect(() => {
-    onUserStateChange(setUser);
-  }, []);
+  const { user, login, logout } = useAuthContext();
   return (
     <header className={styles.header}>
       <div className={styles.wrap}>
