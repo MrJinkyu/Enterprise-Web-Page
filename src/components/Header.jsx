@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import { LuUserCircle2 } from "react-icons/lu";
+import { AiOutlineShopping } from "react-icons/ai";
+import { login, logout, onUserStateChange } from "../apis/firebase";
+
 export default function Header() {
   const [userMenuVisible, setUserMenuVisible] = useState(false);
+  const [user, setUser] = useState();
+  useEffect(() => {
+    onUserStateChange(setUser);
+  }, []);
   return (
     <header className={styles.header}>
       <div className={styles.wrap}>
@@ -20,7 +26,7 @@ export default function Header() {
             <li className={styles.menuItem}>고객지원</li>
           </ul>
           <div className={styles.user}>
-            <LuUserCircle2
+            <AiOutlineShopping
               className={styles.userIcon}
               onClick={() => setUserMenuVisible((prev) => !prev)}
             />
@@ -29,8 +35,18 @@ export default function Header() {
                 userMenuVisible === true && styles.show
               }`}
             >
-              <li className={styles.userMenuItem}>로그인</li>
               <li className={styles.userMenuItem}>장바구니</li>
+              <li className={styles.userMenuItem}>관심목록</li>
+              {!user && (
+                <li className={styles.userMenuItem} onClick={login}>
+                  로그인
+                </li>
+              )}
+              {user && (
+                <li className={styles.userMenuItem} onClick={logout}>
+                  로그아웃
+                </li>
+              )}
             </ul>
           </div>
         </div>

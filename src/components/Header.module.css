@@ -52,7 +52,7 @@
 
 .userIcon {
   color: var(--color-white);
-  font-size: 28px;
+  font-size: 30px;
   transition: all 150ms ease-out;
   cursor: pointer;
 }
