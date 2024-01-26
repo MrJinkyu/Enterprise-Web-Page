@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./NewProduct.module.css";
 import { uploadImage } from "../apis/uploader";
+import { addNewProduct } from "../apis/firebase";
 
 export default function NewProduct() {
   const [product, setProduct] = useState({});
@@ -15,7 +16,12 @@ export default function NewProduct() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    uploadImage(file);
+    uploadImage(file)
+      .then((url) => {
+        addNewProduct(product, url);
+        console.log("제품 등록 완료");
+      })
+      .catch(console.error);
   };
   return (
     <section className={styles.container}>
