@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 
-.userIcon:hover {
+.icon:hover {
   color: var(--color-accent);
 }
 
