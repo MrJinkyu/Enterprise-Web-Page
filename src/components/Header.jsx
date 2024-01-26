@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import { AiOutlineShopping } from "react-icons/ai";
-import { useAuthContext } from "../context/AuthContext";
+import User from "./User";
 
 export default function Header() {
-  const [userMenuVisible, setUserMenuVisible] = useState(false);
-  const { user, login, logout } = useAuthContext();
   return (
     <header className={styles.header}>
       <div className={styles.wrap}>
@@ -22,30 +19,7 @@ export default function Header() {
             <li className={styles.menuItem}>버즈</li>
             <li className={styles.menuItem}>고객지원</li>
           </ul>
-          <div className={styles.user}>
-            <AiOutlineShopping
-              className={styles.userIcon}
-              onClick={() => setUserMenuVisible((prev) => !prev)}
-            />
-            <ul
-              className={`${styles.userMenu} ${
-                userMenuVisible === true && styles.show
-              }`}
-            >
-              <li className={styles.userMenuItem}>장바구니</li>
-              <li className={styles.userMenuItem}>관심목록</li>
-              {!user && (
-                <li className={styles.userMenuItem} onClick={login}>
-                  로그인
-                </li>
-              )}
-              {user && (
-                <li className={styles.userMenuItem} onClick={logout}>
-                  로그아웃
-                </li>
-              )}
-            </ul>
-          </div>
+          <User />
         </div>
       </div>
     </header>

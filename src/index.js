@@ -9,7 +9,9 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import NewProduct from "./pages/NewProduct";
 import MyCart from "./pages/MyCart";
+import InterestsList from "./pages/InterestsList";
 import CustomerSupport from "./pages/CustomerSupport";
+import ProtectedRoute from "./pages/ProtectedRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,8 +20,16 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/products", element: <Products /> },
       { path: "/products/:id", element: <ProductDetail /> },
-      { path: "/products/new", element: <NewProduct /> },
+      {
+        path: "/products/new",
+        element: (
+          <ProtectedRoute requireAdmin>
+            <NewProduct />
+          </ProtectedRoute>
+        ),
+      },
       { path: "/cart", element: <MyCart /> },
+      { path: "/interest", element: <InterestsList /> },
       { path: "/support", element: <CustomerSupport /> },
     ],
   },
