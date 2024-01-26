@@ -25,9 +25,15 @@ export default function NewProduct() {
   };
   return (
     <section className={styles.container}>
-      <h3>새로운 제품 등록하기</h3>
-      {file && <img src={URL.createObjectURL(file)} alt="제품 이미지" />}
-      <form onSubmit={handleSubmit}>
+      <h3 className={styles.title}>새로운 제품 등록하기</h3>
+      {file && (
+        <img
+          className={styles.preview}
+          src={URL.createObjectURL(file)}
+          alt="제품 이미지"
+        />
+      )}
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="file"
           name="file"
@@ -87,7 +93,7 @@ export default function NewProduct() {
           onChange={handleChange}
           value={product.options ?? ""}
         />
-        <button>제품 추가하기</button>
+        <button className={styles.submitBtn}>제품 추가하기</button>
       </form>
     </section>
   );
