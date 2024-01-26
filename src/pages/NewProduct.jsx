@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./NewProduct.module.css";
+import { uploadImage } from "../apis/uploader";
 
 export default function NewProduct() {
   const [product, setProduct] = useState({});
@@ -14,7 +15,7 @@ export default function NewProduct() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(product, file);
+    uploadImage(file);
   };
   return (
     <section className={styles.container}>
