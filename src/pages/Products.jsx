@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { getProducts } from "../apis/firebase";
 import styles from "./Products.module.css";
 import { useLocation } from "react-router-dom";
+import ProductCard from "../components/ProductCard";
 
 export default function Products() {
   const {
@@ -17,10 +18,10 @@ export default function Products() {
     products && products.filter((product) => product.category === menu);
   return (
     <section className={styles.container}>
-      <ul>
+      <ul className={styles.items}>
         {smartphones &&
           smartphones.map((item) => {
-            return <li key={item.id}>{item.title}</li>;
+            return <ProductCard key={item.key} product={item} />;
           })}
       </ul>
     </section>
