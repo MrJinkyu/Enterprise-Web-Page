@@ -6,6 +6,8 @@ import { addNewProduct } from "../apis/firebase";
 export default function NewProduct() {
   const [product, setProduct] = useState({});
   const [file, setFile] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(undefined);
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "file") {
@@ -16,16 +18,23 @@ export default function NewProduct() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     uploadImage(file)
       .then((url) => {
-        addNewProduct(product, url);
-        console.log("제품 등록 완료");
+        addNewProduct(product, url).then(() => {
+          setSuccess("제품 등록 성공✅");
+          setTimeout(() => {
+            setSuccess(undefined);
+          }, 3000);
+        });
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => setIsLoading(false));
   };
   return (
     <section className={styles.container}>
       <h3 className={styles.title}>새로운 제품 등록하기</h3>
+      {success && <p className={styles.success}>{success}</p>}
       {file && (
         <img
           className={styles.preview}
@@ -93,7 +102,9 @@ export default function NewProduct() {
           onChange={handleChange}
           value={product.options ?? ""}
         />
-        <button className={styles.submitBtn}>제품 추가하기</button>
+        <button className={styles.submitBtn} disabled={isLoading}>
+          {isLoading ? "추가중입니다..." : "제품 추가하기"}
+        </button>
       </form>
     </section>
   );
