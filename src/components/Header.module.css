@@ -5,6 +5,9 @@
   width: 100%;
   height: 80px;
   background-color: var(--color-black);
+  color: var(--color-white);
+  /* background-color: transparent; */
+  /* color: var(--color-black); */
   z-index: 100;
 }
 
@@ -22,6 +25,10 @@
   font-weight: 1000;
 }
 
+.titleText {
+  /* color: var(--color-black); */
+}
+
 .nav {
   display: flex;
 }
@@ -35,7 +42,6 @@
   margin: 0 25px;
   font-size: 20px;
   font-weight: 700;
-  color: var(--color-white);
   cursor: pointer;
   transition: all 150ms ease-out;
 }

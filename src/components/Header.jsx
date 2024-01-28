@@ -9,7 +9,9 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.wrap}>
         <h1 className={styles.title}>
-          <Link to="/">Samsung</Link>
+          <Link to="/" className={styles.titleText}>
+            Samsung
+          </Link>
         </h1>
         <div className={styles.nav}>
           <ul className={styles.menu}>
