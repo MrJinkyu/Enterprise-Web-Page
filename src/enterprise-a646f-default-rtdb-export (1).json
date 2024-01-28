@@ -1,0 +1,99 @@
+{
+  "admins": ["19B9OddJ4zcobuRSLjDBFfYDamk1"],
+  "products": {
+    "1ab1b084-3a65-4158-b2d2-3c3e6c7ad6c4": {
+      "category": "스마트폰",
+      "colors": ["그레이#C7C8CA", "블루#6F8AAD"],
+      "id": "1ab1b084-3a65-4158-b2d2-3c3e6c7ad6c4",
+      "image": "http://res.cloudinary.com/dew8mkvyz/image/upload/v1706388117/jxaym6nfk2pbmzzca1ne.avif",
+      "options": ["256GB", "512GB", "1TB"],
+      "price": 2097700,
+      "title": "갤럭시 Z 폴드5 자급제 (삼성닷컴/삼성 강남 전용컬러)",
+      "type": "갤럭시 Z"
+    },
+    "504485a6-f201-49e8-b47f-9da628091e3b": {
+      "category": "스마트폰",
+      "colors": [
+        "민트#CAD9D3",
+        "그라파이트#53565A",
+        "크림#F0EAE0",
+        "라벤더#D4C7D9"
+      ],
+      "id": "504485a6-f201-49e8-b47f-9da628091e3b",
+      "image": "http://res.cloudinary.com/dew8mkvyz/image/upload/v1706388729/qovmg1uvm1hynomd7g2s.avif",
+      "options": ["256GB", "512GB"],
+      "price": 1399200,
+      "title": "갤럭시 Z 플립5 자급제",
+      "type": "갤럭시 Z"
+    },
+    "56919b84-0054-413d-91ed-aa1a676a96ea": {
+      "category": "스마트폰",
+      "colors": [
+        "옐로우#FFD175",
+        "그레이#C7C8CA",
+        "블루#6F8AAD",
+        "그린#749D8C"
+      ],
+      "id": "56919b84-0054-413d-91ed-aa1a676a96ea",
+      "image": "http://res.cloudinary.com/dew8mkvyz/image/upload/v1706427545/lwg6friq2tqjb0tiy11x.webp",
+      "options": ["256GB", "512GB"],
+      "price": 1520200,
+      "title": "갤럭시 Z 플립5 자급제 (삼성닷컴/삼성 강남 전용컬러)",
+      "type": "갤럭시 Z"
+    },
+    "7ea6b587-a89a-4876-9ee5-5173d05242db": {
+      "category": "태블릿",
+      "colors": ["그라파이트#53565A", "베이지#DAD6CA"],
+      "id": "7ea6b587-a89a-4876-9ee5-5173d05242db",
+      "image": "http://res.cloudinary.com/dew8mkvyz/image/upload/v1706390753/frj2uwdfsttxucyd86ky.avif",
+      "options": ["128GB", "256GB"],
+      "price": 998800,
+      "title": "갤럭시 탭 S9 (Wi-Fi)",
+      "type": "갤럭시 탭 S"
+    },
+    "b4db307f-aa1c-4f84-acdc-f136bf88d6bf": {
+      "category": "스마트폰",
+      "colors": ["아이스 블루#A6AFC2", "팬텀 블랙#211E16", "크림#F0EAE0"],
+      "id": "b4db307f-aa1c-4f84-acdc-f136bf88d6bf",
+      "image": "http://res.cloudinary.com/dew8mkvyz/image/upload/v1706388567/pste8moubua49w8idu2i.avif",
+      "options": ["256GB", "512GB"],
+      "price": 2097700,
+      "title": "갤럭시 Z 폴드5 자급제",
+      "type": "갤럭시 Z"
+    },
+    "c2cb68eb-0839-4f15-af26-a05933253236": {
+      "category": "태블릿",
+      "colors": ["그라파이트#53565A", "베이지#DAD6CA"],
+      "id": "c2cb68eb-0839-4f15-af26-a05933253236",
+      "image": "http://res.cloudinary.com/dew8mkvyz/image/upload/v1706390692/plafe1xvp4now5rrhjzp.avif",
+      "options": ["256GB", "512GB"],
+      "price": 1248500,
+      "title": "갤럭시 탭 S9+ (Wi-Fi)",
+      "type": "갤럭시 탭 S"
+    },
+    "e43f41cc-d379-4578-b580-e3475bc919f2": {
+      "category": "태블릿",
+      "colors": ["그라파이트#53565A", "베이지#DAD6CA"],
+      "id": "e43f41cc-d379-4578-b580-e3475bc919f2",
+      "image": "http://res.cloudinary.com/dew8mkvyz/image/upload/v1706390615/hcbtscwjyxbhxkwmktcp.avif",
+      "options": ["256GB", "512GB", "1 TB"],
+      "price": 1598300,
+      "title": "갤럭시 탭 S9 Ultra (Wi-Fi)",
+      "type": "갤럭시 탭 S"
+    },
+    "e90bd48d-0a41-4c2c-9c52-3c7ced6440aa": {
+      "category": "스마트폰",
+      "colors": [
+        "티타늄 블루#A7B5C8",
+        "티타늄 그린#C1D0BE",
+        "티타늄 오렌지#C48B6C"
+      ],
+      "id": "e90bd48d-0a41-4c2c-9c52-3c7ced6440aa",
+      "image": "http://res.cloudinary.com/dew8mkvyz/image/upload/v1706428760/fr6xroyseny1ltctiaxg.webp",
+      "options": ["1TB", "512GB", "256GB"],
+      "price": 2127400,
+      "title": "갤럭시 S24 Ultra 자급제 (삼성닷컴/삼성 강남)",
+      "type": "갤럭시 S"
+    }
+  }
+}

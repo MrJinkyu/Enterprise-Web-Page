@@ -11,8 +11,14 @@ export default function ProductCard({ product }) {
           {colors && (
             <ul className={styles.colors}>
               {colors.map((color, index) => (
-                <li key={index} className={styles.color}>
-                  {color}
+                <li
+                  key={index}
+                  className={styles.color}
+                  style={{ backgroundColor: `#${color.split("#")[1]}` }}
+                >
+                  <span className={styles.colorText}>
+                    {color.split("#")[0]}
+                  </span>
                 </li>
               ))}
             </ul>

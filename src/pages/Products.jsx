@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { getProducts } from "../apis/firebase";
 import styles from "./Products.module.css";
@@ -16,6 +16,9 @@ export default function Products() {
     data: products,
   } = useQuery(["products"], getProducts);
   const [bannerMenu, setBannerMenu] = useState(null);
+  useEffect(() => {
+    setBannerMenu(null);
+  }, [menu]);
   const categoryItems =
     products && products.filter((product) => product.category === menu);
   const subItems =

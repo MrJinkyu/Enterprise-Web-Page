@@ -1,6 +1,6 @@
 .item {
   width: 100%;
-  height: 100%;
+  height: 550px;
   padding: 20px;
   cursor: pointer;
 }
@@ -9,7 +9,8 @@
   width: 100%;
   height: 100%;
   background-color: whitesmoke;
-  border-radius: 10px;
+  border-radius: 1rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +40,14 @@
 }
 
 .color {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
   margin: 0 0.2rem;
+}
+
+.colorText {
+  display: none;
 }
 
 .options {
