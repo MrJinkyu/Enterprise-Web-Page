@@ -7,7 +7,6 @@ export default function SubMenuBanner({
   bannerMenu,
   setBannerMenu,
 }) {
-  console.log(subMenu);
   return (
     <div className={styles.container}>
       <p className={styles.title}>{title}</p>
