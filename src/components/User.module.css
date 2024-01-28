@@ -4,8 +4,8 @@
 }
 
 .icon {
-  color: var(--color-white);
-  font-size: 30px;
+  color: var(--color-black);
+  font-size: 32px;
   transition: all 150ms ease-out;
   cursor: pointer;
 }

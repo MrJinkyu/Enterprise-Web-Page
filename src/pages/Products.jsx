@@ -5,6 +5,7 @@ import styles from "./Products.module.css";
 import { useLocation } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import SubMenuBanner from "../components/SubMenuBanner";
+import Container from "../components/Container";
 
 export default function Products() {
   const {
@@ -29,7 +30,7 @@ export default function Products() {
     ...new Set(categoryItems.map((product) => product.type)),
   ];
   return (
-    <section className={styles.container}>
+    <Container>
       <SubMenuBanner
         title={menu}
         subMenu={subMenu}
@@ -47,6 +48,6 @@ export default function Products() {
             return <ProductCard key={item.id} product={item} />;
           })}
       </ul>
-    </section>
+    </Container>
   );
 }

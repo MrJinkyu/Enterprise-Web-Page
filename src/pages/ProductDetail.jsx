@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./ProductDetail.module.css";
+import Container from "../components/Container";
 
 export default function ProductDetail() {
   const {
@@ -10,7 +11,7 @@ export default function ProductDetail() {
   const [selectedColor, setSelectedColor] = useState();
   const [selectedOption, setSelectedOption] = useState();
   return (
-    <section className={styles.container}>
+    <Container>
       <div className={styles.type}>{type} 구입하기</div>
       <div className={styles.price}>₩{price}부터</div>
       <div className={styles.main}>
@@ -70,6 +71,6 @@ export default function ProductDetail() {
           <button className={styles.cartBtn}>장바구니에 담기</button>
         </div>
       </div>
-    </section>
+    </Container>
   );
 }

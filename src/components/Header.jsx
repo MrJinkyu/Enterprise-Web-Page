@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import User from "./User";
 
 export default function Header() {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const handleWheel = () => {
+      if (window.scrollY >= 40) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    window.addEventListener("wheel", handleWheel);
+    return () => {
+      window.removeEventListener("scroll", handleWheel);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isVisible && styles.visible}`}>
       <div className={styles.wrap}>
         <h1 className={styles.title}>
           <Link to="/" className={styles.titleText}>
