@@ -7,16 +7,16 @@ export default function Header() {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
-    const handleWheel = () => {
+    const handleScroll = () => {
       if (window.scrollY >= 40) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
-    window.addEventListener("wheel", handleWheel);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleWheel);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

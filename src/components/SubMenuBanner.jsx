@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SubMenuBanner.module.css";
 
 export default function SubMenuBanner({
@@ -7,10 +7,28 @@ export default function SubMenuBanner({
   bannerMenu,
   setBannerMenu,
 }) {
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+      if (window.scrollY >= 245) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className={styles.container}>
       <p className={styles.title}>{title}</p>
-      <ul className={styles.menu}>
+      <ul className={`${styles.menu} ${scrolling && styles.fix}`}>
         <li
           onClick={() => setBannerMenu(null)}
           className={`${styles.item} ${!bannerMenu && styles.selected}`}
