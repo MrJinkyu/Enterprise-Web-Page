@@ -19,12 +19,21 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  const isHome = window.location.pathname === "/";
   return (
-    <header className={`${styles.header} ${isVisible && styles.visible}`}>
+    <header
+      className={`${styles.header} ${isVisible && styles.visible} ${
+        !isVisible && isHome && styles.home
+      }`}
+    >
       <div className={styles.wrap}>
         <h1 className={styles.title}>
-          <Link to="/" className={styles.titleText}>
+          <Link
+            to="/"
+            className={`${styles.titleText} ${
+              !isVisible && isHome && styles.home
+            }`}
+          >
             Samsung
           </Link>
         </h1>
@@ -68,7 +77,7 @@ export default function Header() {
             </li>
             <li className={styles.menuItem}>고객지원</li>
           </ul>
-          <User />
+          <User isHome={isHome} isVisible={isVisible} />
         </div>
       </div>
     </header>

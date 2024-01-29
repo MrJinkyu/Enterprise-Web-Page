@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.slideItem {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 44px;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.textBottom {
+  font-size: 40px;
+}
+
+.prevBtn,
+.nextBtn,
+.bottomBtn {
+  font-size: 50px;
+  margin: 0 1.5rem;
+  cursor: pointer;
+  color: var(--color-white);
+  font-weight: 700;
+  z-index: 20;
+  position: absolute;
+  transform: translateY(-50%);
+  transition: all 150ms ease-out;
+}
+
+.prevBtn:hover,
+.nextBtn:hover,
+.bottomBtn:hover {
+  color: var(--color-accent);
+}
+
+.prevBtn {
+  top: 50%;
+  left: 2%;
+}
+
+.nextBtn {
+  top: 50%;
+  right: 2%;
+}
+
+.bottomBtn {
+  font-size: 58px;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: arrowMove 2s infinite;
+}
+
+@keyframes arrowMove {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

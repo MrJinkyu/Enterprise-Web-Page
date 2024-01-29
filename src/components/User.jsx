@@ -4,15 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import styles from "./User.module.css";
 
-export default function User() {
+export default function User({ isHome, isVisible }) {
   const navigate = useNavigate();
   const { user, login, logout } = useAuthContext();
   const [visible, setVisible] = useState(false);
-
   return (
     <div className={styles.container}>
       <AiOutlineShopping
-        className={styles.icon}
+        className={`${styles.icon} ${!isVisible && isHome && styles.home}`}
         onClick={() => setVisible((prev) => !prev)}
       />
       <ul className={`${styles.menu} ${visible === true && styles.show}`}>
