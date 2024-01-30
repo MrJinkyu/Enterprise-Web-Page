@@ -1,23 +1,40 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./ProductDetail.module.css";
 import Container from "../components/Container";
 import { FaHandPointRight } from "react-icons/fa";
+import { addOrUpdateToCart } from "../apis/firebase";
+import { useAuthContext } from "../context/AuthContext";
 
 export default function ProductDetail() {
   const {
     state: { product },
   } = useLocation();
-  const { image, title, price, colors, options, type } = product;
+  const navigate = useNavigate();
+  const { uid } = useAuthContext();
+  const { image, title, price, colors, options, type, category, id } = product;
   const [selectedTitle, setSelectedTitle] = useState();
   const [selectedColor, setSelectedColor] = useState();
   const [selectedOption, setSelectedOption] = useState();
   const [selectedPrice, setSelectedPrice] = useState();
   const handleClick = () => {
-    console.log(selectedTitle);
-    console.log(selectedColor);
-    console.log(selectedOption);
-    console.log(selectedPrice);
+    const newProduct = {
+      id,
+      category,
+      type,
+      title,
+      image,
+      color: selectedColor,
+      options: selectedOption,
+      price: selectedPrice,
+    };
+    addOrUpdateToCart(uid, newProduct)
+      .then(() => {
+        navigate("/cart");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
   return (
     <Container>

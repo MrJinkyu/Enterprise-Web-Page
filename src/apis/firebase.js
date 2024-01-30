@@ -6,7 +6,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getDatabase, ref, get, set } from "firebase/database";
+import { getDatabase, ref, get, set, remove } from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
 
 const firebaseConfig = {
@@ -17,9 +17,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const provider = new GoogleAuthProvider();
 const auth = getAuth();
-const database = getDatabase();
+const provider = new GoogleAuthProvider();
+const database = getDatabase(app);
+
 export function login() {
   signInWithPopup(auth, provider).catch(console.error);
 }
@@ -39,12 +40,12 @@ async function adminUser(user) {
   return get(ref(database, "admins"))
     .then((snapshot) => {
       if (snapshot.exists()) {
-        const admins = Object.values(snapshot.val());
+        const admins = snapshot.val();
         const isAdmin = admins.includes(user.uid);
         return { ...user, isAdmin };
-      } else {
-        return user;
       }
+
+      return user;
     })
     .catch(console.error);
 }
@@ -63,6 +64,26 @@ export async function addNewProduct(product, image) {
 
 export async function getProducts() {
   return get(ref(database, "products"))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return Object.values(snapshot.val());
+      } else {
+        return [];
+      }
+    })
+    .catch(console.error);
+}
+
+export async function addOrUpdateToCart(userId, product) {
+  set(ref(database, `carts/${userId}/${product.id}`), product);
+}
+
+export async function removeFromCart(userId, productId) {
+  return remove(ref(database, `carts/${userId}/${productId}`));
+}
+
+export async function getMyCart(userId) {
+  return get(ref(database, `carts/${userId}`))
     .then((snapshot) => {
       if (snapshot.exists()) {
         return Object.values(snapshot.val());
