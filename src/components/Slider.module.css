@@ -46,7 +46,7 @@
 
 .prevBtn:hover,
 .nextBtn:hover,
-.bottomBtn:hover {
+.btn:hover {
   color: var(--color-accent);
 }
 
@@ -58,6 +58,10 @@
 .nextBtn {
   top: 50%;
   right: 2%;
+}
+
+.bottomBtn:hover {
+  color: var(--color-accent);
 }
 
 .bottomBtn {

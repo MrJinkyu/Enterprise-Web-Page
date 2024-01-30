@@ -21,8 +21,6 @@ export default function Slider() {
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={0} // 슬라이드 사이 여백
         slidesPerView={1} // 한 슬라이드에 보여줄 갯수
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         navigation={{
           nextEl: ".button-next-slide",
           prevEl: ".button-prev-slide",
@@ -84,7 +82,15 @@ export default function Slider() {
         <div className="button-next-slide">
           <GrNext className={styles.nextBtn} />
         </div>
-        <GrLinkDown className={styles.bottomBtn} />
+        <GrLinkDown
+          className={styles.bottomBtn}
+          onClick={() =>
+            window.scrollTo({
+              top: window.innerHeight, // 현재 화면의 세로 높이인 100vh
+              behavior: "smooth", // 부드럽게 스크롤
+            })
+          }
+        />
       </Swiper>
     </div>
   );
