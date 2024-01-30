@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import styles from "./Slider.module.css";
-import { GrLinkPrevious, GrLinkNext, GrLinkDown } from "react-icons/gr";
+import { GrPrevious, GrNext, GrLinkDown } from "react-icons/gr";
 
 export default function Slider() {
   return (
@@ -27,9 +27,9 @@ export default function Slider() {
           nextEl: ".button-next-slide",
           prevEl: ".button-prev-slide",
         }}
-        autoplay={{ delay: 5000 }} // 자동 슬라이드
+        autoplay={{ delay: 6000 }} // 자동 슬라이드
         loop={{ loop: true }}
-        speed={1000}
+        speed={2000}
       >
         <SwiperSlide>
           <div className={styles.text}>
@@ -37,7 +37,7 @@ export default function Slider() {
               Our Journey Towards A Sustainable Future
             </span>
             <span className={styles.textBottom}>
-              지속 가능한 미래를 위한 삼성전자의 여정
+              지속 가능한 미래를 위한 삼성전자
             </span>
           </div>
           <video
@@ -79,10 +79,10 @@ export default function Slider() {
           />
         </SwiperSlide>
         <div className="button-prev-slide">
-          <GrLinkPrevious className={styles.prevBtn} />
+          <GrPrevious className={styles.prevBtn} />
         </div>
         <div className="button-next-slide">
-          <GrLinkNext className={styles.nextBtn} />
+          <GrNext className={styles.nextBtn} />
         </div>
         <GrLinkDown className={styles.bottomBtn} />
       </Swiper>
