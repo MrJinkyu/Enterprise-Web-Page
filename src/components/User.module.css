@@ -2,11 +2,12 @@
   position: relative;
   margin-left: 100px;
 }
-
+.logo {
+  position: relative;
+}
 .icon {
   color: var(--color-black);
   font-size: 32px;
-  transition: all 150ms ease-out;
   cursor: pointer;
 }
 
@@ -14,8 +15,25 @@
   color: var(--color-white);
 }
 
-.icon:hover {
-  color: var(--color-accent);
+.count {
+  position: absolute;
+  bottom: 5%;
+  right: 0%;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 14px;
+  background-color: black;
+  color: var(--color-white);
+  pointer-events: none;
+}
+
+.count.home {
+  background-color: var(--color-white);
+  color: gray;
 }
 
 .menu {

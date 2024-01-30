@@ -3,17 +3,33 @@ import { AiOutlineShopping } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import styles from "./User.module.css";
+import { useQuery } from "react-query";
+import { getMyCart } from "../apis/firebase";
 
 export default function User({ isHome, isVisible }) {
   const navigate = useNavigate();
-  const { user, login, logout } = useAuthContext();
+  const { user, uid, login, logout } = useAuthContext();
   const [visible, setVisible] = useState(false);
+  const { data: cart } = useQuery(["cart", uid || ""], () => getMyCart(uid), {
+    enabled: !!uid,
+  });
+  const isCart = cart && cart.length > 0;
   return (
     <div className={styles.container}>
-      <AiOutlineShopping
-        className={`${styles.icon} ${!isVisible && isHome && styles.home}`}
-        onClick={() => setVisible((prev) => !prev)}
-      />
+      <div className={styles.logo}>
+        <AiOutlineShopping
+          className={`${styles.icon} ${!isVisible && isHome && styles.home}`}
+          onClick={() => setVisible((prev) => !prev)}
+        />
+        {isCart && (
+          <span
+            className={`${styles.count} ${!isVisible && isHome && styles.home}`}
+          >
+            {cart.length}
+          </span>
+        )}
+      </div>
+
       <ul className={`${styles.menu} ${visible === true && styles.show}`}>
         {user && user.isAdmin && (
           <li

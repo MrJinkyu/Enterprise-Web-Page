@@ -8,8 +8,8 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <AuthContextProvider>
-      <Header />
       <QueryClientProvider client={queryClient}>
+        <Header />
         <Outlet />
       </QueryClientProvider>
     </AuthContextProvider>
