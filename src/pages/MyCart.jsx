@@ -12,10 +12,12 @@ export default function MyCart() {
     enabled: !!uid,
   });
   const isCart = cart && cart.length > 0;
+  const resultPrice =
+    cart && cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
   return (
     <Container>
       <div className={styles.topResult}>
-        <p className={styles.resultPrice}>장바구니 총액: ₩4566000</p>
+        <p className={styles.resultPrice}>장바구니 총액: ₩{resultPrice}</p>
         <p className={styles.resultShipping}>
           모든 주문에 무료 배송 서비스가 제공됩니다.
         </p>
@@ -38,7 +40,7 @@ export default function MyCart() {
         </div>
         <div className={styles.total}>
           <span>총계</span>
-          <span className={styles.totalValue}>₩500000000</span>
+          <span className={styles.totalValue}>₩{resultPrice}</span>
         </div>
       </div>
       <div className={styles.paymentBtnContainer}>
