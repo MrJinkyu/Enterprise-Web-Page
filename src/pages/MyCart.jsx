@@ -23,18 +23,20 @@ export default function MyCart() {
       <div className={styles.summary}>
         <div className={styles.subtotal}>
           <span>소계</span>
-          <span>₩2900000</span>
+          <span className={styles.value}>₩2900000</span>
         </div>
         <div className={styles.shipping}>
           <span>배송</span>
-          <span>무료</span>
+          <span className={styles.value}>무료</span>
         </div>
         <div className={styles.total}>
           <span>총계</span>
-          <span>₩500000000</span>
+          <span className={styles.totalValue}>₩500000000</span>
         </div>
       </div>
-      <button className={styles.paymentBtn}>결제</button>
+      <div className={styles.paymentBtnContainer}>
+        <button className={styles.paymentBtn}>결제</button>
+      </div>
     </Container>
   );
 }
