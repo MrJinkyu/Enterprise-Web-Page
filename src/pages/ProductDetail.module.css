@@ -29,15 +29,15 @@
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
 }
 
 .img {
-  width: 60%;
-  height: 100%;
+  width: 58%;
 }
 
 .info {
-  width: 40%;
+  width: 42%;
   height: 100%;
 }
 
@@ -49,12 +49,12 @@
 }
 
 .box.hideColor {
-  opacity: 0.5;
+  opacity: 0.4;
   pointer-events: none;
 }
 
 .box.hideOptions {
-  opacity: 0.5;
+  opacity: 0.4;
   pointer-events: none;
 }
 
@@ -176,7 +176,7 @@
 }
 
 .cartBtn.hide {
-  opacity: 0.5;
+  opacity: 0.4;
   pointer-events: none;
 }
 

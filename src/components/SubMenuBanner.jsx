@@ -11,7 +11,6 @@ export default function SubMenuBanner({
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
       if (window.scrollY >= 245) {
         setScrolling(true);
       } else {

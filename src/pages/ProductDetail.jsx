@@ -25,13 +25,12 @@ export default function ProductDetail() {
       title,
       image,
       color: selectedColor,
-      options: selectedOption,
+      option: selectedOption,
       price: selectedPrice,
+      quantity: 1,
     };
     addOrUpdateToCart(uid, newProduct)
-      .then(() => {
-        navigate("/cart");
-      })
+      .then(() => navigate("/cart"))
       .catch((error) => {
         alert(error.message);
       });
@@ -118,6 +117,7 @@ export default function ProductDetail() {
               </ul>
             </div>
           )}
+
           <button
             className={`${styles.cartBtn} ${
               (!selectedTitle || !selectedColor || !selectedOption) &&

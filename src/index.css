@@ -16,6 +16,7 @@ a {
   color: var(--color-white);
 }
 
+ol,
 ul,
 li {
   list-style: none;
