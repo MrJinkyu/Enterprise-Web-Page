@@ -29,8 +29,10 @@ export default function User({ isHome, isVisible }) {
           </span>
         )}
       </div>
-
-      <ul className={`${styles.menu} ${visible === true && styles.show}`}>
+      <ul
+        onMouseLeave={() => setVisible(false)}
+        className={`${styles.menu} ${visible === true && styles.show}`}
+      >
         {user && user.isAdmin && (
           <li
             className={styles.menuItem}
