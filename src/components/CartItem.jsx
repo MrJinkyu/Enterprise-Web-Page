@@ -1,9 +1,25 @@
 import React from "react";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import styles from "./CartItem.module.css";
+import { addOrUpdateToCart, removeFromCart } from "../apis/firebase";
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, uid }) {
   const { image, type, option, color, price, quantity } = item;
+  const handlePlus = () => {
+    if (item.quantity > 99) {
+      return;
+    }
+    addOrUpdateToCart(uid, { ...item, quantity: quantity + 1 });
+  };
+  const handleMinus = () => {
+    if (item.quantity < 2) {
+      return;
+    }
+    addOrUpdateToCart(uid, { ...item, quantity: quantity - 1 });
+  };
+  const handleRemove = () => {
+    removeFromCart(uid, item.id);
+  };
   return (
     <li className={styles.item}>
       <div className={styles.imgContainer}>
@@ -12,14 +28,16 @@ export default function CartItem({ item }) {
       <div className={styles.info}>
         <div className={styles.name}>{`${type} ${option} ${color}`}</div>
         <div className={styles.counter}>
-          <FaMinus className={styles.minusBtn} />
+          <FaMinus className={styles.minusBtn} onClick={handleMinus} />
           <span className={styles.quantity}>{quantity}</span>
-          <FaPlus className={styles.plusBtn} />
+          <FaPlus className={styles.plusBtn} onClick={handlePlus} />
         </div>
         <div className={styles.priceContainer}>
           <div className={styles.price}>₩{price * quantity}</div>
           <div className={styles.deleteContainer}>
-            <button className={styles.deleteBtn}>삭제</button>
+            <button className={styles.deleteBtn} onClick={handleRemove}>
+              삭제
+            </button>
           </div>
         </div>
       </div>

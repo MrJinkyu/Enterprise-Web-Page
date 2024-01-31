@@ -24,7 +24,7 @@ export default function MyCart() {
       <ol className={styles.items}>
         {isCart &&
           cart.map((item) => {
-            return <CartItem key={item.id} item={item} />;
+            return <CartItem key={item.id} item={item} uid={uid} />;
           })}
       </ol>
       <div className={styles.summary}>
