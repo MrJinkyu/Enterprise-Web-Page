@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import styles from "./NewProduct.module.css";
 import { uploadImage } from "../apis/uploader";
 import { addNewProduct } from "../apis/firebase";
+import { useMutation, useQueryClient } from "react-query";
 
 export default function NewProduct() {
   const [product, setProduct] = useState({});
   const [file, setFile] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(undefined);
+  const queryClient = useQueryClient();
+  const addProduct = useMutation(
+    ({ product, url }) => {
+      addNewProduct(product, url);
+    },
+    { onSuccess: () => queryClient.invalidateQueries(["products"]) }
+  );
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "file") {
@@ -21,12 +29,17 @@ export default function NewProduct() {
     setIsLoading(true);
     uploadImage(file)
       .then((url) => {
-        addNewProduct(product, url).then(() => {
-          setSuccess("제품 등록 성공✅");
-          setTimeout(() => {
-            setSuccess(undefined);
-          }, 3000);
-        });
+        addProduct.mutate(
+          { product, url },
+          {
+            onSuccess: () => {
+              setSuccess("제품 등록 성공✅");
+              setTimeout(() => {
+                setSuccess(undefined);
+              }, 3000);
+            },
+          }
+        );
       })
       .catch(console.error)
       .finally(() => setIsLoading(false));

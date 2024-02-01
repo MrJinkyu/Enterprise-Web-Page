@@ -32,7 +32,7 @@ export default function MyCart() {
       <div className={styles.summary}>
         <div className={styles.subtotal}>
           <span>소계</span>
-          <span className={styles.value}>₩2900000</span>
+          <span className={styles.value}>₩{resultPrice}</span>
         </div>
         <div className={styles.shipping}>
           <span>배송</span>

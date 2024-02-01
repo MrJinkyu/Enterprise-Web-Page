@@ -15,7 +15,7 @@ export default function Products() {
     isLoading,
     error,
     data: products,
-  } = useQuery(["products"], getProducts);
+  } = useQuery(["products"], getProducts, { staleTime: 1000 * 60 * 5 });
   const [bannerMenu, setBannerMenu] = useState(null);
   useEffect(() => {
     setBannerMenu(null);
@@ -31,6 +31,8 @@ export default function Products() {
   ];
   return (
     <Container>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
       <SubMenuBanner
         title={menu}
         subMenu={subMenu}
