@@ -3,20 +3,19 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./ProductDetail.module.css";
 import Container from "../components/Container";
 import { FaHandPointRight } from "react-icons/fa";
-import { addOrUpdateToCart } from "../apis/firebase";
-import { useAuthContext } from "../context/AuthContext";
+import useCarts from "../hooks/useCarts";
 
 export default function ProductDetail() {
   const {
     state: { product },
   } = useLocation();
   const navigate = useNavigate();
-  const { uid } = useAuthContext();
   const { image, title, price, colors, options, type, category, id } = product;
   const [selectedTitle, setSelectedTitle] = useState();
   const [selectedColor, setSelectedColor] = useState();
   const [selectedOption, setSelectedOption] = useState();
   const [selectedPrice, setSelectedPrice] = useState();
+  const { addOrUpdateItem } = useCarts();
   const handleClick = () => {
     const newProduct = {
       id,
@@ -28,12 +27,9 @@ export default function ProductDetail() {
       option: selectedOption,
       price: selectedPrice,
       quantity: 1,
+      createdAt: new Date().toString(),
     };
-    addOrUpdateToCart(uid, newProduct)
-      .then(() => navigate("/cart"))
-      .catch((error) => {
-        alert(error.message);
-      });
+    addOrUpdateItem.mutate(newProduct, { onSuccess: () => navigate("/cart") });
   };
   return (
     <Container>

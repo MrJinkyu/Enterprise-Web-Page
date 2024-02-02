@@ -23,9 +23,11 @@ export default function MyCart() {
       </div>
       <ol className={styles.items}>
         {isCart &&
-          cart.map((item) => {
-            return <CartItem key={item.id} item={item} />;
-          })}
+          cart
+            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            .map((item) => {
+              return <CartItem key={item.id} item={item} />;
+            })}
       </ol>
       <div className={styles.summary}>
         <div className={styles.subtotal}>
