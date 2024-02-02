@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 import styles from "./NewProduct.module.css";
 import { uploadImage } from "../apis/uploader";
-import { addNewProduct } from "../apis/firebase";
-import { useMutation, useQueryClient } from "react-query";
+import useProducts from "../hooks/useProducts";
 
 export default function NewProduct() {
   const [product, setProduct] = useState({});
   const [file, setFile] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(undefined);
-  const queryClient = useQueryClient();
-  const addProduct = useMutation(
-    ({ product, url }) => {
-      addNewProduct(product, url);
-    },
-    { onSuccess: () => queryClient.invalidateQueries(["products"]) }
-  );
+  const { addProduct } = useProducts();
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "file") {

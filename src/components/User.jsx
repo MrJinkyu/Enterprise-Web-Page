@@ -3,16 +3,15 @@ import { AiOutlineShopping } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import styles from "./User.module.css";
-import { useQuery } from "react-query";
-import { getMyCart } from "../apis/firebase";
+import useCarts from "../hooks/useCarts";
 
 export default function User({ isHome, isVisible }) {
   const navigate = useNavigate();
-  const { user, uid, login, logout } = useAuthContext();
+  const { user, login, logout } = useAuthContext();
   const [visible, setVisible] = useState(false);
-  const { data: cart } = useQuery(["cart", uid || ""], () => getMyCart(uid), {
-    enabled: !!uid,
-  });
+  const {
+    cartsQuery: { data: cart },
+  } = useCarts();
   const isCart = cart && cart.length > 0;
   return (
     <div className={styles.container}>

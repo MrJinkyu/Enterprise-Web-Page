@@ -1,24 +1,25 @@
 import React from "react";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import styles from "./CartItem.module.css";
-import { addOrUpdateToCart, removeFromCart } from "../apis/firebase";
+import useCarts from "../hooks/useCarts";
 
-export default function CartItem({ item, uid }) {
+export default function CartItem({ item }) {
   const { image, type, option, color, price, quantity } = item;
+  const { addOrUpdateItem, removeItem } = useCarts();
   const handlePlus = () => {
     if (item.quantity > 99) {
       return;
     }
-    addOrUpdateToCart(uid, { ...item, quantity: quantity + 1 });
+    addOrUpdateItem.mutate({ ...item, quantity: quantity + 1 });
   };
   const handleMinus = () => {
     if (item.quantity < 2) {
       return;
     }
-    addOrUpdateToCart(uid, { ...item, quantity: quantity - 1 });
+    addOrUpdateItem.mutate({ ...item, quantity: quantity - 1 });
   };
   const handleRemove = () => {
-    removeFromCart(uid, item.id);
+    removeItem.mutate(item.id);
   };
   return (
     <li className={styles.item}>

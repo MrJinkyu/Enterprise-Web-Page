@@ -1,16 +1,14 @@
 import React from "react";
 import Container from "../components/Container";
-import { useAuthContext } from "../context/AuthContext";
-import { useQuery } from "react-query";
-import { getMyCart } from "../apis/firebase";
 import CartItem from "../components/CartItem";
 import styles from "./MyCart.module.css";
+import useCarts from "../hooks/useCarts";
 
 export default function MyCart() {
-  const { uid } = useAuthContext();
-  const { data: cart } = useQuery(["cart", uid || ""], () => getMyCart(uid), {
-    enabled: !!uid,
-  });
+  const {
+    cartsQuery: { data: cart },
+  } = useCarts();
+
   const isCart = cart && cart.length > 0;
   const resultPrice =
     cart && cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
@@ -26,7 +24,7 @@ export default function MyCart() {
       <ol className={styles.items}>
         {isCart &&
           cart.map((item) => {
-            return <CartItem key={item.id} item={item} uid={uid} />;
+            return <CartItem key={item.id} item={item} />;
           })}
       </ol>
       <div className={styles.summary}>
