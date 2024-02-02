@@ -93,3 +93,27 @@ export async function getMyCart(userId) {
     })
     .catch(console.error);
 }
+
+export async function addNewShipping(userId, info) {
+  const id = uuidv4();
+  set(ref(database, `shipping/${userId}/${id}`), {
+    ...info,
+    id,
+  });
+}
+
+export async function getMyShipping(userId) {
+  return get(ref(database, `shipping/${userId}`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return Object.values(snapshot.val());
+      } else {
+        return [];
+      }
+    })
+    .catch(console.error);
+}
+
+export async function removeShipping(userId, shippingId) {
+  return remove(ref(database, `shipping/${userId}/${shippingId}`));
+}

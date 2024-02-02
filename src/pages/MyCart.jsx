@@ -4,15 +4,21 @@ import CartItem from "../components/CartItem";
 import styles from "./MyCart.module.css";
 import useCarts from "../hooks/useCarts";
 import EmptyCart from "../components/EmptyCart";
+import { useNavigate } from "react-router-dom";
 
 export default function MyCart() {
   const {
     cartsQuery: { data: cart },
   } = useCarts();
-
+  const navigate = useNavigate();
   const isCart = cart && cart.length > 0;
   const resultPrice =
     cart && cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
+  const handleClick = () => {
+    if (cart && resultPrice) {
+      navigate("/cart/shipping", { state: { cart, resultPrice } });
+    }
+  };
   return (
     <>
       {!isCart && <EmptyCart />}
@@ -48,7 +54,9 @@ export default function MyCart() {
             </div>
           </div>
           <div className={styles.paymentBtnContainer}>
-            <button className={styles.paymentBtn}>결제</button>
+            <button className={styles.paymentBtn} onClick={handleClick}>
+              결제
+            </button>
           </div>
         </Container>
       )}
