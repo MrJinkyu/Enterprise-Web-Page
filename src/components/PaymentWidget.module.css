@@ -24,7 +24,7 @@
   border: none;
   background-color: var(--color-accent);
   color: var(--color-white);
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   padding: 1rem;
 }
 
