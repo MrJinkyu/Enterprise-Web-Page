@@ -22,7 +22,7 @@ export default function CartItem({ item, isCheck }) {
     removeItem.mutate(item.id);
   };
   return (
-    <li className={styles.item}>
+    <li className={`${styles.item} ${isCheck && styles.check}`}>
       <div className={styles.imgContainer}>
         <img className={styles.img} src={image} alt={type} />
       </div>

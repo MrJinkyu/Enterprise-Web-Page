@@ -49,6 +49,7 @@
   margin: 0 auto;
   padding: 3rem 0;
   display: flex;
+  border-bottom: 1px solid lightgray;
 }
 
 .summary {
@@ -83,7 +84,7 @@
   display: flex;
   align-self: flex-end;
   justify-content: space-between;
-  padding: 3rem 0;
+  padding-top: 3rem;
   font-size: 26px;
   font-weight: 600;
 }
@@ -91,25 +92,4 @@
 .totalValue {
   font-size: 28px;
   font-weight: 600;
-}
-
-.paymentBtnContainer {
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.paymentBtn {
-  width: 35%;
-  font-size: 26px;
-  border: none;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  border-radius: 2rem;
-  padding: 1rem;
-}
-
-.paymentBtn:hover {
-  filter: brightness(110%);
 }

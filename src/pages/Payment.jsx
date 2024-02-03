@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Container from "../components/Container";
 import styles from "./Payment.module.css";
 import CartItem from "../components/CartItem";
+import PaymentWidget from "../components/PaymentWidget";
 
 export default function Payment() {
   const {
@@ -64,9 +65,7 @@ export default function Payment() {
           </div>
         </div>
       </div>
-      <div className={styles.paymentBtnContainer}>
-        <button className={styles.paymentBtn}>결제</button>
-      </div>
+      <PaymentWidget products={cart} price={resultPrice} customer={info} />
     </Container>
   );
 }

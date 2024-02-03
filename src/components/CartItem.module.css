@@ -5,6 +5,10 @@
   border-bottom: 1px solid lightgray;
 }
 
+.item.check {
+  padding: 1rem 0;
+}
+
 .imgContainer {
   width: 20%;
   height: 100%;
