@@ -15,6 +15,7 @@ export default function Shipping() {
     addItem,
     removeItem,
   } = useShipping();
+  const hasInfo = Object.keys(info).length > 0;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInfo((info) => ({ ...info, [name]: value }));
@@ -173,7 +174,11 @@ export default function Shipping() {
 
       {!isNew && (
         <div className={styles.submitBtnContaier}>
-          <button onClick={handleClick} className={styles.btn}>
+          <button
+            disabled={!hasInfo}
+            onClick={handleClick}
+            className={`${styles.btn} ${!hasInfo && styles.disabled}`}
+          >
             주문검토
           </button>
         </div>

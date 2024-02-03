@@ -104,6 +104,11 @@
   color: var(--color-white);
   border: none;
   font-weight: bold;
+  transition: all 150ms ease-out;
+}
+
+.btn.disabled {
+  opacity: 0.4;
 }
 
 .submitBtnContaier {
