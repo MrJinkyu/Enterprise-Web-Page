@@ -29,7 +29,9 @@ export default function MyCart() {
             <p className={styles.resultShipping}>
               모든 주문에 무료 배송 서비스가 제공됩니다.
             </p>
-            <button className={styles.resultBtn}>결제</button>
+            <button onClick={handleClick} className={styles.resultBtn}>
+              결제
+            </button>
           </div>
           <ol className={styles.items}>
             {isCart &&
