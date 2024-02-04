@@ -1,21 +1,23 @@
 import { loadPaymentWidget } from "@tosspayments/payment-widget-sdk";
 import React, { useEffect, useRef } from "react";
 import styles from "./PaymentWidget.module.css";
+import { useAuthContext } from "../context/AuthContext";
 
 export default function PaymentWidget({ products, price, customer }) {
   const paymentWidgetRef = useRef(null);
+  const { uid } = useAuthContext();
   useEffect(() => {
     (async () => {
       const paymentWidget = await loadPaymentWidget(
         process.env.REACT_APP_TOSSPAYMENTS_CLIENT_KEY,
-        customer.id
+        uid
       );
 
       paymentWidget.renderPaymentMethods("#payment-widget", price);
 
       paymentWidgetRef.current = paymentWidget;
     })();
-  }, [price, customer.id]);
+  }, [price, uid]);
   return (
     <div className={styles.paymentWidget}>
       <h3 className={styles.paymentHeader}>주문서</h3>
@@ -28,7 +30,7 @@ export default function PaymentWidget({ products, price, customer }) {
 
             try {
               await paymentWidget?.requestPayment({
-                orderId: customer.id,
+                orderId: uid,
                 orderName: `${products[0].type} 외 ${products.length}건`,
                 customerName: `${customer.last}${customer.first}`,
                 customerMobilePhone: `${customer.mobilePhone}`,
