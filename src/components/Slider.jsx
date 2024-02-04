@@ -36,11 +36,9 @@ export default function Slider() {
       >
         <SwiperSlide>
           <div className={styles.text}>
-            <span className={styles.textTop}>
-              Our Journey Towards A Sustainable Future
-            </span>
+            <span className={styles.textTop}>글로벌 IT 리더, 삼성전자</span>
             <span className={styles.textBottom}>
-              지속 가능한 미래를 위한 삼성전자
+              인재와 기술을 바탕으로 최고의 제품과 서비스를 창출
             </span>
           </div>
 
@@ -53,14 +51,12 @@ export default function Slider() {
         <SwiperSlide>
           <div className={styles.text}>
             <span className={styles.textTop}>
-              삼성전자의 사회적 책임을 다하려는 경영원칙은
+              우리는 끊임없이 새로운 길을 여는
             </span>
-            <span className={styles.textBottom}>
-              글로벌 일류기업으로서 삼성전자가 지켜나갈 약속입니다.
-            </span>
+            <span className={styles.textBottom}>개척자입니다</span>
           </div>
           <video
-            src="videos/video3.mp4"
+            src="videos/video1.mp4"
             className={styles.slideItem}
             autoPlay
             muted
@@ -69,15 +65,13 @@ export default function Slider() {
         </SwiperSlide>
         <SwiperSlide>
           <div className={styles.text}>
-            <span className={styles.textTop}>
-              삼성전자는 고객의 삶을 풍요롭게 만들고
-            </span>
+            <span className={styles.textTop}>새로운 미래 창조</span>
             <span className={styles.textBottom}>
-              세상을 놀라게 할 새로운 문화를 창조합니다.
+              삼성전자의 새로운 미래의 창조와 더 나은 세상을 향한 열정
             </span>
           </div>
           <video
-            src="videos/video5.mp4"
+            src="videos/video2.mp4"
             className={styles.slideItem}
             autoPlay
             muted
