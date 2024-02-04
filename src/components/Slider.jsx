@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Navigation,
   Pagination,
@@ -12,22 +12,27 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import styles from "./Slider.module.css";
-import { GrPrevious, GrNext, GrLinkDown } from "react-icons/gr";
+import { GrFormPreviousLink, GrFormNextLink, GrLinkDown } from "react-icons/gr";
 
 export default function Slider() {
+  const progressCircle = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
+  };
   return (
     <div className={styles.container}>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-        spaceBetween={0} // 슬라이드 사이 여백
-        slidesPerView={1} // 한 슬라이드에 보여줄 갯수
+        spaceBetween={0}
+        slidesPerView={1}
         navigation={{
           nextEl: ".button-next-slide",
           prevEl: ".button-prev-slide",
         }}
-        autoplay={{ delay: 6000 }} // 자동 슬라이드
+        autoplay={{ delay: 5000 }}
         loop={{ loop: true }}
-        speed={2000}
+        speed={1300}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
         <SwiperSlide>
           <div className={styles.text}>
@@ -38,12 +43,11 @@ export default function Slider() {
               지속 가능한 미래를 위한 삼성전자
             </span>
           </div>
-          <video
-            src="videos/video1.mp4"
+
+          <img
+            src="images/image1.png"
+            alt="회사"
             className={styles.slideItem}
-            autoPlay
-            muted
-            loop
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -55,10 +59,12 @@ export default function Slider() {
               글로벌 일류기업으로서 삼성전자가 지켜나갈 약속입니다.
             </span>
           </div>
-          <img
-            src="images/image1.jpg"
-            alt="회사"
+          <video
+            src="videos/video3.mp4"
             className={styles.slideItem}
+            autoPlay
+            muted
+            loop
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -70,17 +76,30 @@ export default function Slider() {
               세상을 놀라게 할 새로운 문화를 창조합니다.
             </span>
           </div>
-          <img
-            src="images/image2.avif"
-            alt="노트북"
+          <video
+            src="videos/video5.mp4"
             className={styles.slideItem}
+            autoPlay
+            muted
+            loop
           />
         </SwiperSlide>
-        <div className="button-prev-slide">
-          <GrPrevious className={styles.prevBtn} />
-        </div>
-        <div className="button-next-slide">
-          <GrNext className={styles.nextBtn} />
+        <div className={styles.slideBtnBox}>
+          <div className="button-prev-slide">
+            <GrFormPreviousLink className={styles.prevBtn} />
+          </div>
+          <div className="button-next-slide">
+            <GrFormNextLink className={styles.nextBtn} />
+          </div>
+          <div className={styles.autoplayProgress} slot="container-end">
+            <svg
+              viewBox="0 0 48 48"
+              ref={progressCircle}
+              className={styles.progressCircle}
+            >
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+          </div>
         </div>
         <GrLinkDown
           className={styles.bottomBtn}
