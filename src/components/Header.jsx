@@ -75,7 +75,12 @@ export default function Header() {
             >
               버즈
             </li>
-            <li className={styles.menuItem}>고객지원</li>
+            <li
+              className={styles.menuItem}
+              onClick={() => navigate("/support")}
+            >
+              고객지원
+            </li>
           </ul>
           <User isHome={isHome} isVisible={isVisible} />
         </div>
