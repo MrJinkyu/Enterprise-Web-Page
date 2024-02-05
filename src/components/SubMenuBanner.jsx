@@ -26,7 +26,7 @@ export default function SubMenuBanner({
   }, []);
   return (
     <div className={styles.container}>
-      <p className={styles.title}>{title}</p>
+      <p className={styles.title}>{title} 쇼핑하기</p>
       <ul className={`${styles.menu} ${scrolling && styles.fix}`}>
         <li
           onClick={() => setBannerMenu(null)}
@@ -38,9 +38,8 @@ export default function SubMenuBanner({
           subMenu.map((item, index) => {
             return (
               <li
-                className={`${styles.item} ${
-                  item === bannerMenu && styles.selected
-                }`}
+                className={`${styles.item} ${item === bannerMenu &&
+                  styles.selected}`}
                 key={index}
                 onClick={() => setBannerMenu(item)}
               >

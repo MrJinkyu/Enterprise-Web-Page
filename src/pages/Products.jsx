@@ -27,7 +27,7 @@ export default function Products() {
     ...new Set(categoryItems.map((product) => product.type)),
   ];
   return (
-    <Container>
+    <section className={styles.container}>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       <SubMenuBanner
@@ -47,6 +47,6 @@ export default function Products() {
             return <ProductCard key={item.id} product={item} />;
           })}
       </ul>
-    </Container>
+    </section>
   );
 }
