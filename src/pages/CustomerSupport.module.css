@@ -4,6 +4,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .titleBox {
@@ -14,13 +15,7 @@
 }
 
 .contentBox {
-  display: flex;
-  align-items: center;
   width: 100%;
-}
-
-.infoBox {
-  width: 70%;
   margin-right: 40px;
   height: 525px;
   background-color: whitesmoke;
@@ -28,10 +23,6 @@
   padding: 1rem;
   display: flex;
   align-items: center;
-}
-
-.chatbotBox {
-  width: 30%;
 }
 
 .intro {
@@ -42,10 +33,15 @@
   justify-content: center;
 }
 
+.modal {
+  margin: 0 auto;
+}
+
 .imgBox {
   width: 100%;
   height: 50%;
-  background: center/contain no-repeat url("/public/images/chatbot.png");
+  background: center/contain no-repeat
+    url("https://res.cloudinary.com/dew8mkvyz/image/upload/v1699336797/mxo2gd6fbjexsugjodip.png");
 }
 
 .introText {
