@@ -32,14 +32,16 @@ export default function ProductDetail() {
     addOrUpdateItem.mutate(newProduct, { onSuccess: () => navigate("/cart") });
   };
   return (
-    <Container>
+    <section className={styles.container}>
       <div className={styles.type}>{type} 구입하기</div>
       <div className={styles.price}>
         <span>₩{price}부터</span>
         <span className={styles.interestBtn}>관심목록에 추가하기</span>
       </div>
       <div className={styles.main}>
-        <img className={styles.img} src={image} alt={title} />
+        <div className={styles.imgBox}>
+          <img className={styles.img} src={image} alt={title} />
+        </div>
         <div className={styles.info}>
           <div className={styles.box}>
             <p className={styles.description}>
@@ -69,9 +71,8 @@ export default function ProductDetail() {
                 <li
                   key={index}
                   onClick={() => setSelectedColor(color.split("#")[0])}
-                  className={`${styles.color} ${
-                    selectedColor === color.split("#")[0] && styles.selected
-                  }`}
+                  className={`${styles.color} ${selectedColor ===
+                    color.split("#")[0] && styles.selected}`}
                 >
                   <div
                     className={styles.colorShow}
@@ -84,9 +85,8 @@ export default function ProductDetail() {
 
           {options && (
             <div
-              className={`${styles.box} ${
-                (!selectedTitle || !selectedColor) && styles.hideOptions
-              }`}
+              className={`${styles.box} ${(!selectedTitle || !selectedColor) &&
+                styles.hideOptions}`}
             >
               <p className={styles.description}>
                 {selectedTitle && selectedColor && !selectedOption && (
@@ -102,9 +102,8 @@ export default function ProductDetail() {
                       setSelectedOption(option);
                       setSelectedPrice(price + index * 200000);
                     }}
-                    className={`${styles.optionContainer} ${
-                      option === selectedOption && styles.selected
-                    }`}
+                    className={`${styles.optionContainer} ${option ===
+                      selectedOption && styles.selected}`}
                   >
                     <span className={styles.option}>{option}</span>
                     <span>₩{price + index * 200000}</span>
@@ -115,16 +114,16 @@ export default function ProductDetail() {
           )}
 
           <button
-            className={`${styles.cartBtn} ${
-              (!selectedTitle || !selectedColor || !selectedOption) &&
-              styles.hide
-            }`}
+            className={`${styles.cartBtn} ${(!selectedTitle ||
+              !selectedColor ||
+              !selectedOption) &&
+              styles.hide}`}
             onClick={handleClick}
           >
             장바구니에 담기
           </button>
         </div>
       </div>
-    </Container>
+    </section>
   );
 }
