@@ -21,7 +21,11 @@ export default function PaymentWidget({ products, price, customer }) {
   return (
     <div className={styles.paymentWidget}>
       <h3 className={styles.paymentHeader}>주문서</h3>
-      <div id="payment-widget" />
+      <div className={styles.widgetContainer}>
+        <div className={styles.hideBar}></div>
+        <div id="payment-widget" />
+      </div>
+
       <div className={styles.paymentBtnContainer}>
         <button
           className={styles.paymentBtn}

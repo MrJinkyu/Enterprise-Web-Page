@@ -13,7 +13,7 @@ export default function CustomerSupport() {
         <div className={styles.intro}>
           <div className={styles.imgBox}></div>
           <p className={styles.introText}>
-            "김피티는 <em>인공지능 채팅</em> 로봇 입니다."
+            "규스비는 <em>인공지능 채팅</em> 로봇 입니다."
           </p>
         </div>
         <div className={styles.msgBox}>
