@@ -22,17 +22,16 @@ export default function Header() {
   const isHome = window.location.pathname === "/";
   return (
     <header
-      className={`${styles.header} ${isVisible && styles.visible} ${
-        !isVisible && isHome && styles.home
-      }`}
+      className={`${styles.header} ${isVisible &&
+        styles.visible} ${!isVisible && isHome && styles.home}`}
     >
       <div className={styles.wrap}>
         <h1 className={styles.title}>
           <Link
             to="/"
-            className={`${styles.titleText} ${
-              !isVisible && isHome && styles.home
-            }`}
+            className={`${styles.titleText} ${!isVisible &&
+              isHome &&
+              styles.home}`}
           >
             Samsung
           </Link>
@@ -74,12 +73,6 @@ export default function Header() {
               onClick={() => navigate("/products", { state: { menu: "버즈" } })}
             >
               버즈
-            </li>
-            <li
-              className={styles.menuItem}
-              onClick={() => navigate("/support")}
-            >
-              고객지원
             </li>
           </ul>
           <User isHome={isHome} isVisible={isVisible} />
