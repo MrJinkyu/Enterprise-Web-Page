@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./ProductDetail.module.css";
-import Container from "../components/Container";
 import { FaHandPointRight } from "react-icons/fa";
 import useCarts from "../hooks/useCarts";
 
@@ -11,10 +10,10 @@ export default function ProductDetail() {
   } = useLocation();
   const navigate = useNavigate();
   const { image, title, price, colors, options, type, category, id } = product;
-  const [selectedTitle, setSelectedTitle] = useState();
-  const [selectedColor, setSelectedColor] = useState();
-  const [selectedOption, setSelectedOption] = useState();
-  const [selectedPrice, setSelectedPrice] = useState();
+  const [selectedTitle, setSelectedTitle] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedPrice, setSelectedPrice] = useState(price);
   const { addOrUpdateItem } = useCarts();
   const handleClick = () => {
     const newProduct = {
@@ -116,7 +115,7 @@ export default function ProductDetail() {
           <button
             className={`${styles.cartBtn} ${(!selectedTitle ||
               !selectedColor ||
-              !selectedOption) &&
+              (options && !selectedOption)) &&
               styles.hide}`}
             onClick={handleClick}
           >

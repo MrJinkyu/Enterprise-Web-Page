@@ -27,7 +27,9 @@ export default function CartItem({ item, isCheck }) {
         <img className={styles.img} src={image} alt={type} />
       </div>
       <div className={styles.info}>
-        <div className={styles.name}>{`${type} ${option} ${color}`}</div>
+        <div className={styles.name}>{`${type} ${
+          option ? option : ""
+        } ${color}`}</div>
         <div className={styles.counter}>
           {!isCheck && (
             <FaMinus className={styles.minusBtn} onClick={handleMinus} />

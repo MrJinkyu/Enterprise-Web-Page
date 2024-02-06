@@ -52,13 +52,14 @@ async function adminUser(user) {
 
 export async function addNewProduct(product, image) {
   const id = uuidv4();
+  const options = product.options ? product.options.split(",") : null;
   set(ref(database, `products/${id}`), {
     ...product,
     id,
     image,
     price: parseInt(product.price),
     colors: product.colors.split(","),
-    options: product.options.split(","),
+    options,
   });
 }
 
