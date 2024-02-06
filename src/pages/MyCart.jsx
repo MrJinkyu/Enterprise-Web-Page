@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "../components/Container";
 import CartItem from "../components/CartItem";
 import styles from "./MyCart.module.css";
 import useCarts from "../hooks/useCarts";
@@ -23,7 +22,7 @@ export default function MyCart() {
     <>
       {!isCart && <EmptyCart />}
       {isCart && (
-        <Container>
+        <section className={styles.container}>
           <div className={styles.topResult}>
             <p className={styles.resultPrice}>장바구니 총액: ₩{resultPrice}</p>
             <p className={styles.resultShipping}>
@@ -60,7 +59,7 @@ export default function MyCart() {
               결제
             </button>
           </div>
-        </Container>
+        </section>
       )}
     </>
   );

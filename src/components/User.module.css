@@ -1,6 +1,7 @@
 .container {
   position: relative;
   margin-left: 100px;
+  z-index: 100;
 }
 .logo {
   position: relative;

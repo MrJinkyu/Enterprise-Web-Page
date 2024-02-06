@@ -33,10 +33,7 @@ export default function ProductDetail() {
   return (
     <section className={styles.container}>
       <div className={styles.type}>{type} 구입하기</div>
-      <div className={styles.price}>
-        <span>₩{price}부터</span>
-        <span className={styles.interestBtn}>관심목록에 추가하기</span>
-      </div>
+      <div className={styles.price}>₩{price}부터</div>
       <div className={styles.main}>
         <div className={styles.imgBox}>
           <img className={styles.img} src={image} alt={title} />

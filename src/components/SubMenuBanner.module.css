@@ -24,7 +24,7 @@
   position: fixed;
   top: 80px;
   background-color: var(--color-white);
-  z-index: 100;
+  z-index: 60;
 }
 
 .item {

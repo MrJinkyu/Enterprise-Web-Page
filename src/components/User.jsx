@@ -43,9 +43,6 @@ export default function User({ isHome, isVisible }) {
         <li className={styles.menuItem} onClick={() => navigate("/cart")}>
           장바구니
         </li>
-        <li className={styles.menuItem} onClick={() => navigate("/interest")}>
-          관심목록
-        </li>
         {!user && (
           <li className={styles.menuItem} onClick={login}>
             로그인

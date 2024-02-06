@@ -22,12 +22,17 @@ export default function Shipping() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addItem.mutate(info);
-    if (cart && resultPrice && info) {
-      navigate("/cart/shipping/payment", {
-        state: { cart, resultPrice, info },
-      });
+    if (info.mobilePhone.length < 10 || info.mobilePhone.length > 15) {
+      alert("휴대폰 번호는 10자리~15자리 사이를 입력해주세요.");
+      return;
     }
+    if (!cart || !resultPrice || !info) {
+      return;
+    }
+    addItem.mutate(info);
+    navigate("/cart/shipping/payment", {
+      state: { cart, resultPrice, info },
+    });
   };
 
   const handleClick = () => {
@@ -54,9 +59,8 @@ export default function Shipping() {
             return (
               <li
                 key={item.id}
-                className={`${styles.shippingItem} ${
-                  item.id === selectedItem && styles.selected
-                }`}
+                className={`${styles.shippingItem} ${item.id === selectedItem &&
+                  styles.selected}`}
                 onClick={() => {
                   setIsNew(false);
                   setSelectedItem(item.id);
@@ -70,7 +74,11 @@ export default function Shipping() {
                   <p className={styles.shippingDetail}>{item.detail}</p>
                 </div>
                 <button
-                  onClick={() => removeItem.mutate(item.id)}
+                  onClick={() => {
+                    removeItem.mutate(item.id, {
+                      onSuccess: () => setInfo({}),
+                    });
+                  }}
                   className={styles.deleteItem}
                 >
                   삭제

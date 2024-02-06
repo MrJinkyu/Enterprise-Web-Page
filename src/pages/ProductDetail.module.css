@@ -16,17 +16,7 @@
 .price {
   width: 100%;
   font-size: 16px;
-  display: flex;
-  justify-content: space-between;
   margin: 1rem 0;
-}
-
-.interestBtn {
-  text-decoration: underline;
-  cursor: pointer;
-  font-weight: bold;
-  color: gray;
-  transition: all 150ms ease-out;
 }
 
 .interestBtn:hover {

@@ -9,7 +9,6 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import NewProduct from "./pages/NewProduct";
 import MyCart from "./pages/MyCart";
-import InterestsList from "./pages/InterestsList";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import Shipping from "./pages/Shipping";
 import Payment from "./pages/Payment";
@@ -32,7 +31,6 @@ const router = createBrowserRouter([
       { path: "/cart", element: <MyCart /> },
       { path: "/cart/shipping", element: <Shipping /> },
       { path: "/cart/shipping/payment", element: <Payment /> },
-      { path: "/interest", element: <InterestsList /> },
     ],
   },
 ]);

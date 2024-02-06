@@ -10,9 +10,8 @@ export default function Payment() {
     state: { cart, resultPrice, info },
   } = useLocation();
   const isCart = cart && cart.length > 0;
-  console.log(info);
   return (
-    <Container>
+    <section className={styles.container}>
       <h3 className={styles.title}>
         주문하시겠습니까?
         <br />
@@ -66,6 +65,6 @@ export default function Payment() {
         </div>
       </div>
       <PaymentWidget products={cart} price={resultPrice} customer={info} />
-    </Container>
+    </section>
   );
 }
