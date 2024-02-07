@@ -3,7 +3,6 @@ import styles from "./Products.module.css";
 import { useLocation } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import SubMenuBanner from "../components/SubMenuBanner";
-import Container from "../components/Container";
 import useProducts from "../hooks/useProducts";
 
 export default function Products() {
@@ -39,13 +38,17 @@ export default function Products() {
       <ul className={styles.items}>
         {!subItems &&
           categoryItems &&
-          categoryItems.map((item) => {
-            return <ProductCard key={item.id} product={item} />;
-          })}
+          categoryItems
+            .sort((a, b) => a.price - b.price)
+            .map((item) => {
+              return <ProductCard key={item.id} product={item} />;
+            })}
         {subItems &&
-          subItems.map((item) => {
-            return <ProductCard key={item.id} product={item} />;
-          })}
+          subItems
+            .sort((a, b) => b.price - a.price)
+            .map((item) => {
+              return <ProductCard key={item.id} product={item} />;
+            })}
       </ul>
     </section>
   );

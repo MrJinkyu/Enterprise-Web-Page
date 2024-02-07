@@ -3,7 +3,7 @@ import styles from "./ProductCard.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ product }) {
-  const { image, title, price, colors, id } = product;
+  const { image, title, price, colors, id, isNew } = product;
   const navigate = useNavigate();
   const [mouseOver, setMouseOver] = useState(false);
   return (
@@ -19,7 +19,9 @@ export default function ProductCard({ product }) {
         <div className={`${styles.hoverText} ${mouseOver && styles.visible}`}>
           제품 자세히 살펴보기
         </div>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.title}>
+          {title} {isNew && <span className={styles.newItem}>New</span>}
+        </div>
         <img src={image} alt={title} className={styles.img} />
         {colors && (
           <ul className={styles.colors}>

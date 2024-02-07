@@ -47,6 +47,27 @@
   padding: 30px 30px 0px;
 }
 
+.newItem {
+  font-size: 22px;
+  background: #ff7a59;
+  background: linear-gradient(to bottom, #ff7a59 13%, #cfbd1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .img {
   width: 100%;
   height: 55%;
