@@ -58,10 +58,7 @@
   cursor: pointer;
 }
 
-.item:hover .imgBox1,
-.item:hover .imgBox2,
-.item:hover .imgBox3,
-.item:hover .imgBox4 {
+.item:hover .img {
   filter: brightness(80%);
 }
 
@@ -69,49 +66,22 @@
   color: var(--color-accent);
 }
 
-.imgBox1 {
+.imgBox {
   width: 100%;
   height: 50%;
-  background: center/cover no-repeat url("/public/images/news1.jpeg");
-  object-fit: cover;
   border-radius: 0.5rem;
   transition: all 150ms ease-out;
   border: 1px solid lightgray;
+  overflow: hidden;
 }
 
-.imgBox2 {
+.img {
   width: 100%;
-  height: 50%;
-  background: center/cover no-repeat url("/public/images/news2.png");
-  object-fit: cover;
-  border-radius: 0.5rem;
-  transition: all 150ms ease-out;
-  border: 1px solid lightgray;
-}
-
-.imgBox3 {
-  width: 100%;
-  height: 50%;
-  background: center/cover no-repeat url("/public/images/news3.jpeg");
-  object-fit: cover;
-  border-radius: 0.5rem;
-  transition: all 150ms ease-out;
-  border: 1px solid lightgray;
-}
-
-.imgBox4 {
-  width: 100%;
-  height: 50%;
-  background: center/cover no-repeat url("/public/images/news4.jpeg");
-  object-fit: cover;
-  border-radius: 0.5rem;
-  transition: all 150ms ease-out;
-  border: 1px solid lightgray;
+  height: 100%;
 }
 
 .info {
   width: 100%;
-  height: 50%;
 }
 
 .title {
@@ -135,7 +105,6 @@
   border-radius: 0.5rem;
   font-size: 20px;
   font-weight: 700;
-  width: 200px;
   text-align: center;
   transition: all 150ms ease-out;
 }
@@ -144,4 +113,66 @@
   background-color: var(--color-accent);
   color: var(--color-white);
   border-color: transparent;
+}
+
+@media (max-width: 1535px) {
+  .news {
+    padding: 80px 90px 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .news {
+    padding: 80px 30px 80px;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  .newsContents {
+    height: auto;
+  }
+
+  .newsItems {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .titleBox {
+    font-size: 34px;
+  }
+
+  .newsItems {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    height: 100px;
+  }
+
+  .imgBox {
+    width: 30%;
+    height: 90%;
+    margin-right: 10px;
+  }
+
+  .info {
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    margin: 0px;
+    font-size: 14px;
+  }
+
+  .linkBtn {
+    margin-top: 2rem;
+    font-size: 16px;
+  }
 }

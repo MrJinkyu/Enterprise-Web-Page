@@ -103,3 +103,33 @@
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
+
+@media (max-width: 1535px) {
+  .slideBtnBox {
+    padding: 0 90px;
+  }
+  .text {
+    padding: 0 90px;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slideBtnBox {
+    padding: 0 30px;
+  }
+  .text {
+    padding: 0 30px;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .prevBtn,
+  .nextBtn {
+    font-size: 4rem;
+  }
+  .bottomBtn {
+    display: none;
+  }
+}

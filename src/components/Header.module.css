@@ -59,3 +59,15 @@
 .menuItem:hover {
   color: var(--color-accent);
 }
+
+@media (max-width: 1535px) {
+  .wrap {
+    padding: 0 90px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrap {
+    padding: 0 30px;
+  }
+}
