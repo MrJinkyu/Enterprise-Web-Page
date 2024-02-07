@@ -104,7 +104,7 @@
   transform: rotate(-90deg);
 }
 
-@media (max-width: 1535px) {
+@media (max-width: 1536px) {
   .slideBtnBox {
     padding: 0 90px;
   }

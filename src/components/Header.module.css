@@ -77,21 +77,13 @@
   color: var(--color-accent);
 }
 
-@media (max-width: 1535px) {
+@media (max-width: 1536px) {
   .wrap {
     padding: 0 90px;
   }
 }
 
-@media (max-width: 1024px) {
-  .title {
-    font-size: 26px;
-  }
-
-  .wrap {
-    padding: 0 30px;
-  }
-
+@media (max-width: 1280px) {
   .nav {
     align-items: center;
   }
@@ -106,5 +98,15 @@
 
   .toggleBtn {
     display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 26px;
+  }
+
+  .wrap {
+    padding: 0 30px;
   }
 }

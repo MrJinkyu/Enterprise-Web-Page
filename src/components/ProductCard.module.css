@@ -111,3 +111,18 @@
   font-weight: 700;
   color: var(--color-black);
 }
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 18px;
+  }
+  .newItem {
+    font-size: 18px;
+  }
+  .priceContainer {
+    font-size: 14px;
+  }
+  .price {
+    font-size: 16px;
+  }
+}
