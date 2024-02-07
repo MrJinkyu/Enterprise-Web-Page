@@ -103,7 +103,12 @@ export default function ChatBotModal({ handleClick }) {
 
   return (
     <div className={styles.container}>
-      <button className={styles.closeBtn} onClick={() => handleClick(false)}>
+      <button
+        className={styles.closeBtn}
+        onClick={() => {
+          handleClick(false);
+        }}
+      >
         <MdClose />
       </button>
       <ThemeProvider theme={theme}>

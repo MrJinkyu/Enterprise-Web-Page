@@ -29,6 +29,7 @@
 
 .title {
   font-weight: 1000;
+  font-size: 32px;
 }
 
 .titleText {
@@ -37,6 +38,22 @@
 
 .titleText.home {
   color: var(--color-white);
+}
+
+.toggleBtn {
+  color: var(--color-black);
+  font-size: 32px;
+  cursor: pointer;
+  display: none;
+  margin-left: 1.5rem;
+}
+
+.toggleBtn.home {
+  color: var(--color-white);
+  font-size: 32px;
+  cursor: pointer;
+  display: none;
+  margin-left: 1.5rem;
 }
 
 .nav {
@@ -67,7 +84,27 @@
 }
 
 @media (max-width: 1024px) {
+  .title {
+    font-size: 26px;
+  }
+
   .wrap {
     padding: 0 30px;
+  }
+
+  .nav {
+    align-items: center;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .toggleBtn.home {
+    display: block;
+  }
+
+  .toggleBtn {
+    display: block;
   }
 }
