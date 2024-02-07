@@ -132,4 +132,7 @@
   .bottomBtn {
     display: none;
   }
+  .text {
+    font-size: 24px;
+  }
 }

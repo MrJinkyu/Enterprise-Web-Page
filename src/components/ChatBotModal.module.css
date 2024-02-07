@@ -8,13 +8,19 @@
 
 .closeBtn {
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 0;
   z-index: 1000;
-  font-size: 28px;
+  font-size: 26px;
   background-color: transparent;
   color: var(--color-white);
   padding: 0.5rem;
   border: none;
   outline: none;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 90%;
+  }
 }
