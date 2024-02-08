@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 
 export default function ScrollTop() {
   const { pathname } = useLocation();
-  console.log("맨위로!");
 
   useEffect(() => {
     window.scrollTo(0, 0);

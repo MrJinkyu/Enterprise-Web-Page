@@ -44,9 +44,10 @@ export default function Header() {
         </h1>
         <div className={styles.nav}>
           <ul className={styles.menu}>
-            {SIDE_MENU.map((item) => {
+            {SIDE_MENU.map((item, index) => {
               return (
                 <li
+                  key={index}
                   className={styles.menuItem}
                   onClick={() =>
                     navigate("/products", { state: { menu: item } })
