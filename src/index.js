@@ -12,6 +12,7 @@ import MyCart from "./pages/MyCart";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import Shipping from "./pages/Shipping";
 import Payment from "./pages/Payment";
+
 const router = createBrowserRouter([
   {
     path: "/",

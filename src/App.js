@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { useState } from "react";
 import ChatBotModal from "./components/ChatBotModal";
 import ChatBotBtn from "./components/ChatBotBtn";
+import ScrollTop from "./components/ScrollTop";
+
 const queryClient = new QueryClient();
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
   return (
     <AuthContextProvider>
       <QueryClientProvider client={queryClient}>
+        <ScrollTop />
         <Header />
         <Outlet />
         <ChatBotBtn handleClick={setModal} />
