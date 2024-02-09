@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Container from "../components/Container";
 import styles from "./Shipping.module.css";
 import useShipping from "../hooks/useShipping";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -45,10 +44,12 @@ export default function Shipping() {
   const [isNew, setIsNew] = useState(false);
   const [selectedItem, setSelectedItem] = useState(undefined);
   return (
-    <Container>
-      <h3 className={styles.title}>
-        주문하신 제품이 어디로 배송되길 원하십니까?
-      </h3>
+    <section className={styles.container}>
+      <div className={styles.titleBox}>
+        <h3 className={styles.title}>
+          주문하신 제품이 어디로 배송되길 원하십니까?
+        </h3>
+      </div>
       {shippings && shippings.length > 0 && (
         <div className={styles.prevItemsText}>기존 배송지</div>
       )}
@@ -176,7 +177,7 @@ export default function Shipping() {
             value={info.detail ?? ""}
             required
           />
-          <button className={styles.btn}>주문검토</button>
+          <button className={styles.submitBtn}>결제페이지로 이동</button>
         </form>
       )}
 
@@ -187,10 +188,10 @@ export default function Shipping() {
             onClick={handleClick}
             className={`${styles.btn} ${!hasInfo && styles.disabled}`}
           >
-            주문검토
+            결제페이지로 이동
           </button>
         </div>
       )}
-    </Container>
+    </section>
   );
 }
