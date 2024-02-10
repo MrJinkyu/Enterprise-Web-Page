@@ -4,10 +4,11 @@ import styles from "./MyCart.module.css";
 import useCarts from "../hooks/useCarts";
 import EmptyCart from "../components/EmptyCart";
 import { useNavigate } from "react-router-dom";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function MyCart() {
   const {
-    cartsQuery: { data: cart },
+    cartsQuery: { isLoading, data: cart },
   } = useCarts();
   const navigate = useNavigate();
   const isCart = cart && cart.length > 0;
@@ -20,7 +21,7 @@ export default function MyCart() {
   };
   return (
     <>
-      {!isCart && <EmptyCart />}
+      {isLoading && <LoadingSpinner />}
       {isCart && (
         <section className={styles.container}>
           <div className={styles.topResult}>
@@ -59,6 +60,7 @@ export default function MyCart() {
               결제
             </button>
           </div>
+          {!isLoading && !isCart && <EmptyCart />}
         </section>
       )}
     </>

@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import SubMenuBanner from "../components/SubMenuBanner";
 import useProducts from "../hooks/useProducts";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function Products() {
   const {
@@ -27,7 +28,7 @@ export default function Products() {
   ];
   return (
     <section className={styles.container}>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <LoadingSpinner />}
       {error && <p>{error}</p>}
       <SubMenuBanner
         title={menu}
