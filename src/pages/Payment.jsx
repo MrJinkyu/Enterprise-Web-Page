@@ -29,23 +29,25 @@ export default function Payment() {
       <div className={styles.deliveryContainer}>
         <h3 className={styles.deliveryHeader}>받는사람정보</h3>
         <table className={styles.deliveryAddress}>
-          <tr>
-            <th className={styles.deliveryTh}>이름</th>
-            <td className={styles.deliveryTd}>
-              {info.last}
-              {info.first}
-            </td>
-          </tr>
-          <tr>
-            <th className={styles.deliveryTh}>배송주소</th>
-            <td className={styles.deliveryTd}>
-              {info.state} {info.city} {info.detail} {info.postalCode}
-            </td>
-          </tr>
-          <tr>
-            <th className={styles.deliveryTh}>연락처</th>
-            <td className={styles.deliveryTd}>{info.mobilePhone}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th className={styles.deliveryTh}>이름</th>
+              <td className={styles.deliveryTd}>
+                {info.last}
+                {info.first}
+              </td>
+            </tr>
+            <tr>
+              <th className={styles.deliveryTh}>배송주소</th>
+              <td className={styles.deliveryTd}>
+                {info.state} {info.city} {info.detail} {info.postalCode}
+              </td>
+            </tr>
+            <tr>
+              <th className={styles.deliveryTh}>연락처</th>
+              <td className={styles.deliveryTd}>{info.mobilePhone}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div className={styles.summaryContainer}>

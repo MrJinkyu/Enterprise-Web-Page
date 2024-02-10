@@ -42,7 +42,7 @@ export default function MyCart() {
     <>
       {isLoading && <LoadingSpinner />}
       <section className={styles.container}>
-        {(isCart || isLocalCart) && (
+        {((user && isCart) || (!user && isLocalCart)) && (
           <div className={styles.topResult}>
             <p className={styles.resultPrice}>장바구니 총액: ₩{resultPrice}</p>
             <p className={styles.resultShipping}>
@@ -76,7 +76,7 @@ export default function MyCart() {
                 );
               })}
         </ol>
-        {(isCart || isLocalCart) && (
+        {((user && isCart) || (!user && isLocalCart)) && (
           <div className={styles.summary}>
             <div className={styles.subtotal}>
               <span>소계</span>
@@ -92,14 +92,14 @@ export default function MyCart() {
             </div>
           </div>
         )}
-        {(isCart || isLocalCart) && (
+        {((user && isCart) || (!user && isLocalCart)) && (
           <div className={styles.paymentBtnContainer}>
             <button className={styles.paymentBtn} onClick={handleClick}>
               결제
             </button>
           </div>
         )}
-        {!isCart && !isLocalCart && <EmptyCart />}
+        {((user && !isCart) || (!user && !isLocalCart)) && <EmptyCart />}
       </section>
     </>
   );
