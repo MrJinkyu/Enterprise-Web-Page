@@ -3,22 +3,43 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 import styles from "./CartItem.module.css";
 import useCarts from "../hooks/useCarts";
 
-export default function CartItem({ item, isCheck }) {
+export default function CartItem({
+  item,
+  isCheck,
+  isUser,
+  onUpdate,
+  onDeleted,
+}) {
   const { image, type, option, color, price, quantity } = item;
   const { addOrUpdateItem, removeItem } = useCarts();
   const handlePlus = () => {
+    if (!isUser) {
+      if (item.quantity > 99) {
+        return;
+      }
+      onUpdate({ ...item, quantity: quantity + 1 });
+    }
     if (item.quantity > 99) {
       return;
     }
     addOrUpdateItem.mutate({ ...item, quantity: quantity + 1 });
   };
   const handleMinus = () => {
+    if (!isUser) {
+      if (item.quantity < 2) {
+        return;
+      }
+      onUpdate({ ...item, quantity: quantity - 1 });
+    }
     if (item.quantity < 2) {
       return;
     }
     addOrUpdateItem.mutate({ ...item, quantity: quantity - 1 });
   };
   const handleRemove = () => {
+    if (!isUser) {
+      onDeleted(item.id);
+    }
     removeItem.mutate(item.id);
   };
   return (

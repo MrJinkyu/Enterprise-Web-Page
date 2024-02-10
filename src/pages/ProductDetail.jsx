@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./ProductDetail.module.css";
 import { FaHandPointRight } from "react-icons/fa";
 import useCarts from "../hooks/useCarts";
+import { useAuthContext } from "../context/AuthContext";
+import useLocal from "../hooks/useLocal";
 
 export default function ProductDetail() {
   const {
@@ -15,6 +17,9 @@ export default function ProductDetail() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedPrice, setSelectedPrice] = useState(price);
   const { addOrUpdateItem } = useCarts();
+  const { user } = useAuthContext();
+  const { getLocalItems, addOrUpdateLocalItems } = useLocal();
+
   const handleClick = () => {
     const newProduct = {
       id,
@@ -28,6 +33,11 @@ export default function ProductDetail() {
       quantity: 1,
       createdAt: new Date().toString(),
     };
+    if (!user) {
+      const items = getLocalItems();
+      const updatedItems = [...items, newProduct];
+      addOrUpdateLocalItems(updatedItems);
+    }
     addOrUpdateItem.mutate(newProduct, { onSuccess: () => navigate("/cart") });
   };
   return (
