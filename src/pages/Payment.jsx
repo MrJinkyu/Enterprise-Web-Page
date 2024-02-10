@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Container from "../components/Container";
 import styles from "./Payment.module.css";
 import CartItem from "../components/CartItem";
 import PaymentWidget from "../components/PaymentWidget";
@@ -12,11 +11,13 @@ export default function Payment() {
   const isCart = cart && cart.length > 0;
   return (
     <section className={styles.container}>
-      <h3 className={styles.title}>
-        주문하시겠습니까?
-        <br />
-        입력하신 사항이 모두 정확한지 확인해주십시오.
-      </h3>
+      <div className={styles.titleBox}>
+        <h3 className={styles.title}>
+          주문하시겠습니까?
+          <br />
+          입력하신 사항이 모두 정확한지 확인해주십시오.
+        </h3>
+      </div>
       <ol className={styles.items}>
         {isCart &&
           cart

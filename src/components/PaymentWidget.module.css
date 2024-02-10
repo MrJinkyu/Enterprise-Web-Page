@@ -1,5 +1,6 @@
 .paymentWidget {
-  width: 70%;
+  width: 980px;
+  min-width: 980px;
   margin: 0 auto;
   padding-top: 3rem;
 }
@@ -45,4 +46,31 @@
 
 .paymentBtn:hover {
   filter: brightness(110%);
+}
+
+@media (max-width: 1024px) {
+  .paymentWidget {
+    width: 620px;
+    min-width: 620px;
+  }
+}
+
+@media (max-width: 640px) {
+  .paymentWidget {
+    width: calc(85% + 48px);
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  .paymentHeader {
+    font-size: 22px;
+    width: 100%;
+    padding-left: 24px;
+  }
+
+  .paymentBtn {
+    width: 85%;
+    font-size: 20px;
+    margin: 0 auto;
+  }
 }

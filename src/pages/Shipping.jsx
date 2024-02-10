@@ -74,16 +74,18 @@ export default function Shipping() {
                   </p>
                   <p className={styles.shippingDetail}>{item.detail}</p>
                 </div>
-                <button
-                  onClick={() => {
-                    removeItem.mutate(item.id, {
-                      onSuccess: () => setInfo({}),
-                    });
-                  }}
-                  className={styles.deleteItem}
-                >
-                  삭제
-                </button>
+                <div>
+                  <button
+                    onClick={() => {
+                      removeItem.mutate(item.id, {
+                        onSuccess: () => setInfo({}),
+                      });
+                    }}
+                    className={styles.deleteItem}
+                  >
+                    삭제
+                  </button>
+                </div>
               </li>
             );
           })}
@@ -177,7 +179,7 @@ export default function Shipping() {
             value={info.detail ?? ""}
             required
           />
-          <button className={styles.submitBtn}>결제페이지로 이동</button>
+          <button className={styles.submitBtn}>주문검토</button>
         </form>
       )}
 
@@ -188,7 +190,7 @@ export default function Shipping() {
             onClick={handleClick}
             className={`${styles.btn} ${!hasInfo && styles.disabled}`}
           >
-            결제페이지로 이동
+            주문검토
           </button>
         </div>
       )}
