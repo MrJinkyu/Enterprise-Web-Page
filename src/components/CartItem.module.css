@@ -45,6 +45,7 @@
 .plusBtn {
   cursor: pointer;
   transition: all 150ms ease-out;
+  color: gray;
 }
 
 .minusBtn:hover,

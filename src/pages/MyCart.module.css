@@ -35,7 +35,8 @@
   border-radius: 0.5rem;
   border: none;
   padding: 0.5rem;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .items {
@@ -99,7 +100,8 @@
 
 .paymentBtn {
   width: 360px;
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: 600;
   border: none;
   background-color: var(--color-accent);
   color: var(--color-white);

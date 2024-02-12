@@ -123,7 +123,7 @@ export default function Shipping() {
           <input
             type="number"
             name="mobilePhone"
-            placeholder="휴대폰 번호"
+            placeholder='휴대폰 번호 ("-" 없이)'
             onChange={handleChange}
             value={info.mobilePhone ?? ""}
             required
@@ -164,22 +164,14 @@ export default function Shipping() {
             />
           </div>
           <input
-            type="number"
-            name="postalCode"
-            placeholder="우편번호"
-            onChange={handleChange}
-            value={info.postalCode ?? ""}
-            required
-          />
-          <input
             type="text"
             name="detail"
-            placeholder="건물 번지, 이름 또는 거리 이름"
+            placeholder="건물 번지, 상세 주소"
             onChange={handleChange}
             value={info.detail ?? ""}
             required
           />
-          <button className={styles.submitBtn}>주문검토</button>
+          <button className={styles.submitBtn}>결제하기</button>
         </form>
       )}
 
@@ -190,7 +182,7 @@ export default function Shipping() {
             onClick={handleClick}
             className={`${styles.btn} ${!hasInfo && styles.disabled}`}
           >
-            주문검토
+            결제하기
           </button>
         </div>
       )}

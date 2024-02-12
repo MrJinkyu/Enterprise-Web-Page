@@ -47,11 +47,13 @@
   padding: 1rem;
   margin-bottom: 2rem;
   cursor: pointer;
+  opacity: 0.6;
 }
 
 .shippingItem.selected,
 .newShippingBtn.selected {
   border-color: var(--color-accent);
+  opacity: 1;
 }
 
 .shippingName {
@@ -91,6 +93,7 @@
   background-color: var(--color-white);
   font-size: 20px;
   font-weight: 700;
+  opacity: 0.6;
 }
 
 .form input,

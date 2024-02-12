@@ -49,7 +49,7 @@ export default function MyCart() {
               모든 주문에 무료 배송 서비스가 제공됩니다.
             </p>
             <button onClick={handleClick} className={styles.resultBtn}>
-              결제
+              구매하기
             </button>
           </div>
         )}
@@ -95,7 +95,7 @@ export default function MyCart() {
         {((user && isCart) || (!user && isLocalCart)) && (
           <div className={styles.paymentBtnContainer}>
             <button className={styles.paymentBtn} onClick={handleClick}>
-              결제
+              구매하기
             </button>
           </div>
         )}

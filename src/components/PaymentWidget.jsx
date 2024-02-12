@@ -46,7 +46,7 @@ export default function PaymentWidget({ products, price, customer }) {
             }
           }}
         >
-          결제하기
+          결제
         </button>
       </div>
     </div>
