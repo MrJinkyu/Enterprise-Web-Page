@@ -6,7 +6,7 @@ import PaymentWidget from "../components/PaymentWidget";
 
 export default function Payment() {
   const {
-    state: { cart, resultPrice, info },
+    state: { cart, resultPrice, info, uid },
   } = useLocation();
   const isCart = cart && cart.length > 0;
   return (
@@ -67,7 +67,12 @@ export default function Payment() {
           </div>
         </div>
       </div>
-      <PaymentWidget products={cart} price={resultPrice} customer={info} />
+      <PaymentWidget
+        products={cart}
+        price={resultPrice}
+        customer={info}
+        uid={uid}
+      />
     </section>
   );
 }

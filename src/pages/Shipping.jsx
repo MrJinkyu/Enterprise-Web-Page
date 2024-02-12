@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import styles from "./Shipping.module.css";
 import useShipping from "../hooks/useShipping";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../context/AuthContext";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Shipping() {
   const {
     state: { cart, resultPrice },
   } = useLocation();
+  const { uid } = useAuthContext();
   const [info, setInfo] = useState({});
   const navigate = useNavigate();
   const {
@@ -28,16 +31,23 @@ export default function Shipping() {
     if (!cart || !resultPrice || !info) {
       return;
     }
+    if (!uid) {
+      const id = uuidv4();
+      navigate("/cart/shipping/payment", {
+        state: { cart, resultPrice, info, uid: id },
+      });
+      return;
+    }
     addItem.mutate(info);
     navigate("/cart/shipping/payment", {
-      state: { cart, resultPrice, info },
+      state: { cart, resultPrice, info, uid },
     });
   };
 
   const handleClick = () => {
     if (cart && resultPrice && info) {
       navigate("/cart/shipping/payment", {
-        state: { cart, resultPrice, info },
+        state: { cart, resultPrice, info, uid },
       });
     }
   };

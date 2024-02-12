@@ -1,11 +1,9 @@
 import { loadPaymentWidget } from "@tosspayments/payment-widget-sdk";
 import React, { useEffect, useRef } from "react";
 import styles from "./PaymentWidget.module.css";
-import { useAuthContext } from "../context/AuthContext";
 
-export default function PaymentWidget({ products, price, customer }) {
+export default function PaymentWidget({ products, price, customer, uid }) {
   const paymentWidgetRef = useRef(null);
-  const { uid } = useAuthContext();
   useEffect(() => {
     (async () => {
       const paymentWidget = await loadPaymentWidget(

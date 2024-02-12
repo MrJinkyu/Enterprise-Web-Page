@@ -12,7 +12,7 @@ export default function MyCart() {
   const {
     cartsQuery: { isLoading, data: cart },
   } = useCarts();
-  const { user, login } = useAuthContext();
+  const { user } = useAuthContext();
   const { getLocalItems } = useLocal();
   const [localItems, setLocalItems] = useState(getLocalItems());
   const navigate = useNavigate();
@@ -23,7 +23,9 @@ export default function MyCart() {
     : localItems.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
   const handleClick = () => {
     if (!user) {
-      navigate("/cart/shipping/login", { state: { cart, resultPrice } });
+      navigate("/cart/shipping/login", {
+        state: { cart: localItems, resultPrice },
+      });
     }
     if (!isCart || !resultPrice) {
       return;
