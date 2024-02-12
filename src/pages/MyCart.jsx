@@ -23,9 +23,7 @@ export default function MyCart() {
     : localItems.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
   const handleClick = () => {
     if (!user) {
-      alert("상품을 결제하시려면 로그인하세요.");
-      login();
-      return;
+      navigate("/cart/shipping/login", { state: { cart, resultPrice } });
     }
     if (!isCart || !resultPrice) {
       return;

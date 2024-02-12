@@ -12,6 +12,7 @@ import MyCart from "./pages/MyCart";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import Shipping from "./pages/Shipping";
 import Payment from "./pages/Payment";
+import LoginType from "./pages/LoginType";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { path: "/cart", element: <MyCart /> },
       { path: "/cart/shipping", element: <Shipping /> },
       { path: "/cart/shipping/payment", element: <Payment /> },
+      { path: "/cart/shipping/login", element: <LoginType /> },
     ],
   },
 ]);
