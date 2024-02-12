@@ -118,7 +118,7 @@ export default function ChatBotModal({ handleClick }) {
           steps={steps}
           className={styles.bot}
           recognitionEnable={true}
-          width="450px"
+          width="400px"
           botAvatar="https://res.cloudinary.com/dew8mkvyz/image/upload/v1699336797/mxo2gd6fbjexsugjodip.png"
         />
       </ThemeProvider>
