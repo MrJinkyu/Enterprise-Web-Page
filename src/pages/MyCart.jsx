@@ -12,7 +12,7 @@ export default function MyCart() {
   const {
     cartsQuery: { isLoading, data: cart },
   } = useCarts();
-  const { user } = useAuthContext();
+  const { user, login } = useAuthContext();
   const { getLocalItems } = useLocal();
   const [localItems, setLocalItems] = useState(getLocalItems());
   const navigate = useNavigate();
@@ -22,9 +22,15 @@ export default function MyCart() {
     ? cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
     : localItems.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
   const handleClick = () => {
-    if (cart && resultPrice) {
-      navigate("/cart/shipping", { state: { cart, resultPrice } });
+    if (!user) {
+      alert("상품을 결제하시려면 로그인하세요.");
+      login();
+      return;
     }
+    if (!isCart || !resultPrice) {
+      return;
+    }
+    navigate("/cart/shipping", { state: { cart, resultPrice } });
   };
   const handleUpdate = (updated) => {
     setLocalItems((items) =>
