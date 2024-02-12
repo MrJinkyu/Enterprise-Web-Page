@@ -40,7 +40,7 @@ export default function Products() {
         {!subItems &&
           categoryItems &&
           categoryItems
-            .sort((a, b) => a.price - b.price)
+            .sort((a, b) => b.price - a.price)
             .map((item) => {
               return <ProductCard key={item.id} product={item} />;
             })}

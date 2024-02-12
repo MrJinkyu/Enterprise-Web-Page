@@ -7,6 +7,7 @@ import { useState } from "react";
 import ChatBotModal from "./components/ChatBotModal";
 import ChatBotBtn from "./components/ChatBotBtn";
 import ScrollTop from "./components/ScrollTop";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ function App() {
         <ScrollTop />
         <Header />
         <Outlet />
+        <Footer />
         <ChatBotBtn handleClick={setModal} />
         {modal && <ChatBotModal handleClick={setModal} />}
       </QueryClientProvider>

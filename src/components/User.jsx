@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import styles from "./User.module.css";
 import useCarts from "../hooks/useCarts";
+import useLocal from "../hooks/useLocal";
 
 export default function User({ isHome, isVisible }) {
   const navigate = useNavigate();
@@ -13,6 +14,10 @@ export default function User({ isHome, isVisible }) {
     cartsQuery: { data: cart },
   } = useCarts();
   const isCart = cart && cart.length > 0;
+  const { getLocalItems } = useLocal();
+  const localItems = getLocalItems();
+  const isLocalCart = localItems && localItems.length > 0;
+
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
@@ -20,11 +25,18 @@ export default function User({ isHome, isVisible }) {
           className={`${styles.icon} ${!isVisible && isHome && styles.home}`}
           onClick={() => setVisible((prev) => !prev)}
         />
-        {isCart && (
+        {user && isCart && (
           <span
             className={`${styles.count} ${!isVisible && isHome && styles.home}`}
           >
             {cart.length}
+          </span>
+        )}
+        {!user && isLocalCart && (
+          <span
+            className={`${styles.count} ${!isVisible && isHome && styles.home}`}
+          >
+            {localItems.length}
           </span>
         )}
       </div>

@@ -40,7 +40,7 @@ export default function Payment() {
             <tr>
               <th className={styles.deliveryTh}>배송주소</th>
               <td className={styles.deliveryTd}>
-                {info.state} {info.city} {info.detail} {info.postalCode}
+                {info.state} {info.city} {info.detail}
               </td>
             </tr>
             <tr>
