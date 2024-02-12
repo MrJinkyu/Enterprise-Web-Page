@@ -111,6 +111,9 @@
 }
 
 .form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   margin-right: 1rem;
 }
 
