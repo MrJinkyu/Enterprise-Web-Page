@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./ProductDetail.module.css";
-import { FaHandPointRight } from "react-icons/fa";
 import useCarts from "../hooks/useCarts";
 import { useAuthContext } from "../context/AuthContext";
 import useLocal from "../hooks/useLocal";
@@ -12,7 +11,6 @@ export default function ProductDetail() {
   } = useLocation();
   const navigate = useNavigate();
   const { image, title, price, colors, options, type, category, id } = product;
-  const [selectedTitle, setSelectedTitle] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedPrice, setSelectedPrice] = useState(price);
@@ -21,6 +19,10 @@ export default function ProductDetail() {
   const { getLocalItems, addOrUpdateLocalItems } = useLocal();
 
   const handleClick = () => {
+    if (!selectedColor || (options && !selectedOption)) {
+      alert("제품의 옵션을 선택해주세요.");
+      return;
+    }
     const newProduct = {
       id,
       category,
@@ -49,26 +51,9 @@ export default function ProductDetail() {
           <img className={styles.img} src={image} alt={title} />
         </div>
         <div className={styles.info}>
+          <div className={styles.title}>{title}</div>
           <div className={styles.box}>
             <p className={styles.description}>
-              {!selectedTitle && <FaHandPointRight className={styles.hand} />}
-              <strong>모델.</strong>당신이 선택한 모델은?
-            </p>
-            <div
-              className={`${styles.title} ${selectedTitle && styles.selected}`}
-              onClick={() => setSelectedTitle(title)}
-            >
-              {title}
-            </div>
-          </div>
-
-          <div
-            className={`${styles.box} ${!selectedTitle && styles.hideColor}`}
-          >
-            <p className={styles.description}>
-              {selectedTitle && !selectedColor && (
-                <FaHandPointRight className={styles.hand} />
-              )}
               <strong>색상.</strong>마음에 드는 색상을 선택하세요.
             </p>
             <p className={styles.selectedColor}>색상 - {selectedColor}</p>
@@ -90,14 +75,8 @@ export default function ProductDetail() {
           </div>
 
           {options && (
-            <div
-              className={`${styles.box} ${(!selectedTitle || !selectedColor) &&
-                styles.hideOptions}`}
-            >
+            <div className={styles.box}>
               <p className={styles.description}>
-                {selectedTitle && selectedColor && !selectedOption && (
-                  <FaHandPointRight className={styles.hand} />
-                )}
                 <strong>저장 용량.</strong>당신에게 알맞은 저장 용량은?
               </p>
               <ul className={styles.options}>
@@ -119,13 +98,7 @@ export default function ProductDetail() {
             </div>
           )}
 
-          <button
-            className={`${styles.cartBtn} ${(!selectedTitle ||
-              !selectedColor ||
-              (options && !selectedOption)) &&
-              styles.hide}`}
-            onClick={handleClick}
-          >
+          <button className={styles.cartBtn} onClick={handleClick}>
             장바구니에 담기
           </button>
         </div>

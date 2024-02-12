@@ -38,8 +38,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: whitesmoke;
+  background-color: transparent;
   border-radius: 0.5rem;
+  background-color: #fbfbfd;
 }
 
 .img {
@@ -67,11 +68,6 @@
   pointer-events: none;
 }
 
-.box.hideOptions {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
 .description {
   font-size: 24px;
   font-weight: 700;
@@ -80,45 +76,14 @@
   position: relative;
 }
 
-.hand {
-  position: absolute;
-  top: 0;
-  left: -30px;
-  color: var(--color-accent);
-  animation: handMove 1500ms linear infinite;
-}
-
-@keyframes handMove {
-  0% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(-25%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
 .description strong {
   color: var(--color-black);
 }
 
 .title {
-  border: 2px solid lightgray;
-  border-radius: 0.5rem;
-  font-size: 18px;
-  padding: 1.2rem 1.5rem;
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  color: var(--color-black);
-  transition: all 150ms ease-out;
-  cursor: pointer;
-}
-
-.title.selected {
-  border-color: var(--color-accent);
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 55px;
 }
 
 .selectedColor {
@@ -160,7 +125,7 @@
 }
 
 .optionContainer {
-  border: 2px solid gray;
+  border: 3px solid gray;
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
@@ -173,6 +138,7 @@
   cursor: pointer;
   transition: all 150ms ease-out;
 }
+
 .optionContainer.selected {
   border-color: var(--color-accent);
   color: var(--color-black);
@@ -188,11 +154,6 @@
   border-radius: 0.5rem;
   border: none;
   transition: all 150ms ease-out;
-}
-
-.cartBtn.hide {
-  opacity: 0.4;
-  pointer-events: none;
 }
 
 .cartBtn:hover {
