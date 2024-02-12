@@ -12,7 +12,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import styles from "./Slider.module.css";
-import { GrFormPreviousLink, GrFormNextLink, GrLinkDown } from "react-icons/gr";
+// import { GrFormPreviousLink, GrFormNextLink, GrLinkDown } from "react-icons/gr";
+import {
+  CgArrowLongLeft,
+  CgArrowLongRight,
+  CgArrowLongDown,
+} from "react-icons/cg";
 
 export default function Slider() {
   const progressCircle = useRef(null);
@@ -80,10 +85,12 @@ export default function Slider() {
         </SwiperSlide>
         <div className={styles.slideBtnBox}>
           <div className="button-prev-slide">
-            <GrFormPreviousLink className={styles.prevBtn} />
+            {/* <GrFormPreviousLink className={styles.prevBtn} /> */}
+            <CgArrowLongLeft className={styles.prevBtn} />
           </div>
           <div className="button-next-slide">
-            <GrFormNextLink className={styles.nextBtn} />
+            {/* <GrFormNextLink className={styles.nextBtn} /> */}
+            <CgArrowLongRight className={styles.nextBtn} />
           </div>
           <div className={styles.autoplayProgress} slot="container-end">
             <svg
@@ -95,7 +102,16 @@ export default function Slider() {
             </svg>
           </div>
         </div>
-        <GrLinkDown
+        {/* <GrLinkDown
+          className={styles.bottomBtn}
+          onClick={() =>
+            window.scrollTo({
+              top: window.innerHeight, // 현재 화면의 세로 높이인 100vh
+              behavior: "smooth", // 부드럽게 스크롤
+            })
+          }
+        /> */}
+        <CgArrowLongDown
           className={styles.bottomBtn}
           onClick={() =>
             window.scrollTo({

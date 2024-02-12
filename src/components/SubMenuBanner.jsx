@@ -32,7 +32,7 @@ export default function SubMenuBanner({
           onClick={() => setBannerMenu(null)}
           className={`${styles.item} ${!bannerMenu && styles.selected}`}
         >
-          All
+          전체보기
         </li>
         {subMenu &&
           subMenu.map((item, index) => {
