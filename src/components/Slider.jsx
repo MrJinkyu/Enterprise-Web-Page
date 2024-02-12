@@ -40,48 +40,53 @@ export default function Slider() {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
         <SwiperSlide>
-          <div className={styles.text}>
-            <span className={styles.textTop}>글로벌 IT 리더, 삼성전자</span>
-            <span className={styles.textBottom}>
-              인재와 기술을 바탕으로 최고의 제품과 서비스를 창출
-            </span>
+          <div className={styles.slideItemBox1}>
+            <div className={styles.text}>
+              <span className={styles.textTop}>글로벌 IT 리더, 삼성전자</span>
+              <span className={styles.textBottom}>
+                인재와 기술을 바탕으로 최고의 제품과 서비스를 창출
+              </span>
+            </div>
+            <img
+              src="images/image1.png"
+              alt="회사"
+              className={styles.slideItem}
+            />
           </div>
-
-          <img
-            src="images/image1.png"
-            alt="회사"
-            className={styles.slideItem}
-          />
         </SwiperSlide>
         <SwiperSlide>
-          <div className={styles.text}>
-            <span className={styles.textTop}>
-              우리는 끊임없이 새로운 길을 여는
-            </span>
-            <span className={styles.textBottom}>개척자입니다</span>
+          <div className={styles.slideItemBox2}>
+            <div className={styles.text}>
+              <span className={styles.textTop}>
+                우리는 끊임없이 새로운 길을 여는
+              </span>
+              <span className={styles.textBottom}>개척자입니다</span>
+            </div>
+            <video
+              src="videos/video1.mp4"
+              className={styles.slideItem}
+              autoPlay
+              muted
+              loop
+            />
           </div>
-          <video
-            src="videos/video1.mp4"
-            className={styles.slideItem}
-            autoPlay
-            muted
-            loop
-          />
         </SwiperSlide>
         <SwiperSlide>
-          <div className={styles.text}>
-            <span className={styles.textTop}>새로운 미래 창조</span>
-            <span className={styles.textBottom}>
-              삼성전자의 새로운 미래의 창조와 더 나은 세상을 향한 열정
-            </span>
+          <div className={styles.slideItemBox3}>
+            <div className={styles.text}>
+              <span className={styles.textTop}>새로운 미래 창조</span>
+              <span className={styles.textBottom}>
+                삼성전자의 새로운 미래의 창조와 더 나은 세상을 향한 열정
+              </span>
+            </div>
+            <video
+              src="videos/video2.mp4"
+              className={styles.slideItem}
+              autoPlay
+              muted
+              loop
+            />
           </div>
-          <video
-            src="videos/video2.mp4"
-            className={styles.slideItem}
-            autoPlay
-            muted
-            loop
-          />
         </SwiperSlide>
         <div className={styles.slideBtnBox}>
           <div className="button-prev-slide">
