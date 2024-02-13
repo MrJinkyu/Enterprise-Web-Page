@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# 🔍 Preview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+| pc | mobile |
+| --- | --- |
+| ![pc](public/assets/readme/preview_pc.gif) | ![mobile](public/assets/readme/preview_mobile.gif) |
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+# 🥸 [Enterprise-Web-Page](https://teal-mandazi-2a1254.netlify.app/)
 
-### `npm start`
+`#README` `#기업형웹페이지` `#삼성전자` `#반응형`   
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+기업 소개를 위한 슬라이드 배너와 편리한 장바구니 기능을 통한 제품 판매! **Enterprise Page - JinKyu**   
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**사이트 바로 가기 👉 [클릭!](https://teal-mandazi-2a1254.netlify.app/)**
 
-### `npm test`
+# ⛰️ Background
+이 삼성전자 웹 페이지를 개발한 이유는 웹 개발자로서 기업형 페이지를 구현하며 실제 기업 페이지에서 필요한 다양한 기능과 반응형 레이아웃을 경험해보고자 했습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+또한, 기존의 삼성전자 페이지 스타일에서 벗어나 새로운 디자인을 적용하여 더 직관적이고 사용자 친화적인 UI를 제공하고자 했습니다.
+<br>
 
-### `npm run build`
+# 🪃 Skills
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Client
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- React Router
+- React Query
+- React Icons
+- React Simple Chatbot
+- Swiper
+- Tosspayments
+- Cloudinary
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Server
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Firebase
