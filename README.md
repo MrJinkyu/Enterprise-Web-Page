@@ -8,6 +8,8 @@
 
 # 🥸 [Enterprise-Web-Page](https://teal-mandazi-2a1254.netlify.app/)
 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMrJinkyu%2FEnterprise-Web-Page&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 `#기업형웹페이지` `#커머스` `#삼성전자` `#회사소개` `#제품판매`
 
 삼성전자를 소개하고 제품을 판매하는 종합 플랫폼으로, 사용자 관점에서 자연스러운 흐름의 전자상거래 경험을 제공합니다. **Enterprise Page - JinKyu**   
@@ -63,3 +65,18 @@
 ## Server
 
 - Firebase
+
+<br>
+
+# 🪛 Project Control
+
+- Version Control: Git, Github
+- Task Control: Notion
+
+<br>
+
+# 🚀 Deployment
+
+- Client: Netlify
+
+<br>
