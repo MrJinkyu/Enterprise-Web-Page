@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -23,9 +25,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 44px;
   color: var(--color-white);
-  font-weight: 700;
+  font-size: 42px;
+  font-weight: bold;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.textBottom {
+  font-size: 16px;
+  margin-top: 23px;
+  color: #ededed;
 }
 
 .slideBtnBox {

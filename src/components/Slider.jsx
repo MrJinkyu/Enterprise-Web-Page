@@ -42,10 +42,16 @@ export default function Slider() {
         <SwiperSlide>
           <div className={styles.slideItemBox1}>
             <div className={styles.text}>
-              <span className={styles.textTop}>글로벌 IT 리더, 삼성전자</span>
-              <span className={styles.textBottom}>
-                인재와 기술을 바탕으로 최고의 제품과 서비스를 창출
-              </span>
+              <p className={styles.textTop}>
+                Changes Start
+                <br />
+                from Small Steps
+              </p>
+              <p className={styles.textBottom}>
+                작은 변화가 가져오는 큰 변화의 흐름에
+                <br />
+                선두에 선 삼성전자는 책임을 다하며 나아가겠습니다.
+              </p>
             </div>
             <img
               src="images/image1.png"
@@ -57,10 +63,17 @@ export default function Slider() {
         <SwiperSlide>
           <div className={styles.slideItemBox2}>
             <div className={styles.text}>
-              <span className={styles.textTop}>
-                우리는 끊임없이 새로운 길을 여는
-              </span>
-              <span className={styles.textBottom}>개척자입니다</span>
+              <p className={styles.textTop}>
+                글로벌 IT 리더, 삼성전자
+                <br />
+                우리는 끊임없이
+                <br />새 길을 여는 개척자입니다
+              </p>
+              <p className={styles.textBottom}>
+                혁신성과 지속가능성을 동시에 갖춘 제품을
+                <br />
+                세상에 선보여 고객에게 더 나은 미래를 선물하겠습니다.
+              </p>
             </div>
             <video
               src="videos/video1.mp4"
@@ -74,10 +87,20 @@ export default function Slider() {
         <SwiperSlide>
           <div className={styles.slideItemBox3}>
             <div className={styles.text}>
-              <span className={styles.textTop}>새로운 미래 창조</span>
-              <span className={styles.textBottom}>
-                삼성전자의 새로운 미래의 창조와 더 나은 세상을 향한 열정
-              </span>
+              <p className={styles.textTop}>
+                지속가능한
+                <br />
+                미래를 위한 삼성전자의 여정,
+                <br />
+                그리고 새로운 미래 창조
+              </p>
+              <p className={styles.textBottom}>
+                변화는 한 순간에 일어나지 않습니다.
+                <br />
+                매일의 작은 실천이 모여 지속가능한 삶을 이루는 것,
+                <br />
+                이것이 우리의 지속가능성입니다.
+              </p>
             </div>
             <video
               src="videos/video2.mp4"
