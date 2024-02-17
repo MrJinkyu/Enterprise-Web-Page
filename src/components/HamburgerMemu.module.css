@@ -16,17 +16,20 @@
 
 .navLogo {
   width: 100%;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navTitle {
-  padding: 20px 0;
-  font-weight: 1000;
-  font-size: 30px;
+.logo {
   color: var(--color-black);
   cursor: pointer;
+}
+
+.logoImg {
+  width: 150px;
+  height: 25px;
 }
 
 .close {

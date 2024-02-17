@@ -27,17 +27,23 @@
   align-items: center;
 }
 
-.title {
-  font-weight: 1000;
-  font-size: 32px;
+.logo {
+  width: 166px;
+  height: 26px;
 }
 
-.titleText {
-  color: var(--color-black);
+.logoLink {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: center/contain no-repeat url("/public/images/logo_black.png");
 }
 
-.titleText.home {
-  color: var(--color-white);
+.logoLink.home {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: center/contain no-repeat url("/public/images/logo_white.png");
 }
 
 .toggleBtn {
@@ -84,6 +90,11 @@
 }
 
 @media (max-width: 1280px) {
+  .logo {
+    width: 150px;
+    height: 25px;
+  }
+
   .nav {
     align-items: center;
   }
@@ -102,10 +113,6 @@
 }
 
 @media (max-width: 640px) {
-  .title {
-    font-size: 26px;
-  }
-
   .wrap {
     padding: 0 30px;
   }

@@ -8,15 +8,20 @@ export default function HamburgerMemu({ sideMenu, active, handleClick }) {
   return (
     <div className={`${styles.sideNavbar} ${active && styles.active}`}>
       <div className={styles.navLogo}>
-        <h3
-          className={styles.navTitle}
+        <div
+          className={styles.logo}
           onClick={() => {
             navigate("/");
             handleClick(false);
           }}
         >
-          Samsung
-        </h3>
+          <img
+            src="images/logo_black.png"
+            alt="logo"
+            className={styles.logoImg}
+          />
+        </div>
+
         <MdClose
           className={styles.close}
           onClick={() => {

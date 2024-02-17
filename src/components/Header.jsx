@@ -32,16 +32,14 @@ export default function Header() {
         styles.visible} ${!isVisible && isHome && styles.home}`}
     >
       <div className={styles.wrap}>
-        <h1 className={styles.title}>
+        <div className={styles.logo}>
           <Link
             to="/"
-            className={`${styles.titleText} ${!isVisible &&
+            className={`${styles.logoLink} ${!isVisible &&
               isHome &&
               styles.home}`}
-          >
-            Samsung
-          </Link>
-        </h1>
+          ></Link>
+        </div>
         <div className={styles.nav}>
           <ul className={styles.menu}>
             {SIDE_MENU.map((item, index) => {
