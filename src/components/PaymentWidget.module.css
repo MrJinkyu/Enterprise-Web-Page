@@ -35,15 +35,6 @@
   transform: translateY(-20px);
 }
 
-.hideBar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  z-index: 10;
-  background-color: var(--color-white);
-}
-
 .paymentBtn:hover {
   filter: brightness(110%);
 }

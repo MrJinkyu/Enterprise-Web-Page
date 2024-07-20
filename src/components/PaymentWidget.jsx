@@ -20,7 +20,6 @@ export default function PaymentWidget({ products, price, customer, uid }) {
     <div className={styles.paymentWidget}>
       <h3 className={styles.paymentHeader}>주문서</h3>
       <div className={styles.widgetContainer}>
-        <div className={styles.hideBar}></div>
         <div id="payment-widget" />
       </div>
 
