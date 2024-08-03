@@ -28,6 +28,10 @@
   font-style: normal;
 }
 
+.description {
+  font-size: 14px;
+}
+
 .newsContents {
   width: 100%;
   height: 450px;

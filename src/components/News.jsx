@@ -35,6 +35,9 @@ export default function News() {
           <br />
           <em>새로운 소식</em>을 만나 보세요
         </h3>
+        <p className={styles.description}>
+          실제 samsung Newsroom 페이지로 이동하는 링크가 걸려있습니다.
+        </p>
       </div>
       <div className={`${styles.newsContents} ${isVisible && styles.anime}`}>
         <ul className={styles.newsItems}>
