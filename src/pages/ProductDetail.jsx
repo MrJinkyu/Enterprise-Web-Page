@@ -4,6 +4,7 @@ import styles from "./ProductDetail.module.css";
 import useCarts from "../hooks/useCarts";
 import { useAuthContext } from "../context/AuthContext";
 import useLocal from "../hooks/useLocal";
+import { formatToWon } from "../utils/formatToWon";
 
 export default function ProductDetail() {
   const {
@@ -91,7 +92,7 @@ export default function ProductDetail() {
                       selectedOption && styles.selected}`}
                   >
                     <span className={styles.option}>{option}</span>
-                    <span>₩{price + index * 200000}</span>
+                    <span>₩{formatToWon(price + index * 200000)}</span>
                   </li>
                 ))}
               </ul>

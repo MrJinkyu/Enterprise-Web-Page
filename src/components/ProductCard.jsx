@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./ProductCard.module.css";
 import { useNavigate } from "react-router-dom";
+import { formatToWon } from "../utils/formatToWon";
 
 export default function ProductCard({ product }) {
   const { image, title, price, colors, id, isNew } = product;
@@ -38,7 +39,7 @@ export default function ProductCard({ product }) {
         )}
         <div className={styles.priceContainer}>
           <span>기준가</span>
-          <span className={styles.price}>₩{price}부터</span>
+          <span className={styles.price}>₩{formatToWon(price)}부터</span>
         </div>
       </div>
     </li>

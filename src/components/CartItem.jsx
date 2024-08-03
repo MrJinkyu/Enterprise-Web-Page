@@ -2,6 +2,7 @@ import React from "react";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import styles from "./CartItem.module.css";
 import useCarts from "../hooks/useCarts";
+import { formatToWon } from "../utils/formatToWon";
 
 export default function CartItem({
   item,
@@ -61,7 +62,7 @@ export default function CartItem({
           )}
         </div>
         <div className={styles.priceContainer}>
-          <div className={styles.price}>₩{price * quantity}</div>
+          <div className={styles.price}>₩{formatToWon(price * quantity)}</div>
           {!isCheck && (
             <div className={styles.deleteContainer}>
               <button className={styles.deleteBtn} onClick={handleRemove}>

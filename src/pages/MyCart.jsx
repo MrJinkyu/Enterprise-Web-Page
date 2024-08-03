@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
 import useLocal from "../hooks/useLocal";
 import { useAuthContext } from "../context/AuthContext";
+import { formatToWon } from "../utils/formatToWon";
 
 export default function MyCart() {
   const {
@@ -50,7 +51,9 @@ export default function MyCart() {
       <section className={styles.container}>
         {((user && isCart) || (!user && isLocalCart)) && (
           <div className={styles.topResult}>
-            <p className={styles.resultPrice}>장바구니 총액: ₩{resultPrice}</p>
+            <p className={styles.resultPrice}>
+              장바구니 총액: ₩{formatToWon(resultPrice)}
+            </p>
             <p className={styles.resultShipping}>
               모든 주문에 무료 배송 서비스가 제공됩니다.
             </p>
@@ -86,7 +89,7 @@ export default function MyCart() {
           <div className={styles.summary}>
             <div className={styles.subtotal}>
               <span>소계</span>
-              <span className={styles.value}>₩{resultPrice}</span>
+              <span className={styles.value}>₩{formatToWon(resultPrice)}</span>
             </div>
             <div className={styles.shipping}>
               <span>배송</span>
@@ -94,7 +97,9 @@ export default function MyCart() {
             </div>
             <div className={styles.total}>
               <span>총계</span>
-              <span className={styles.totalValue}>₩{resultPrice}</span>
+              <span className={styles.totalValue}>
+                ₩{formatToWon(resultPrice)}
+              </span>
             </div>
           </div>
         )}

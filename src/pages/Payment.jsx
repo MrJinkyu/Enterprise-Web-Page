@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import styles from "./Payment.module.css";
 import CartItem from "../components/CartItem";
 import PaymentWidget from "../components/PaymentWidget";
+import { formatToWon } from "../utils/formatToWon";
 
 export default function Payment() {
   const {
@@ -55,7 +56,7 @@ export default function Payment() {
         <div className={styles.summary}>
           <div className={styles.subtotal}>
             <span>소계</span>
-            <span className={styles.value}>₩{resultPrice}</span>
+            <span className={styles.value}>₩{formatToWon(resultPrice)}</span>
           </div>
           <div className={styles.shipping}>
             <span>배송</span>
@@ -63,7 +64,9 @@ export default function Payment() {
           </div>
           <div className={styles.total}>
             <span>총계</span>
-            <span className={styles.totalValue}>₩{resultPrice}</span>
+            <span className={styles.totalValue}>
+              ₩{formatToWon(resultPrice)}
+            </span>
           </div>
         </div>
       </div>
